@@ -7,11 +7,11 @@ const About: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Profile Header */}
         <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-brand-accent shadow-[0_0_30px_rgba(168,85,247,0.3)] shrink-0">
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-brand-accent shadow-[0_0_30px_rgba(168,85,247,0.3)] shrink-0 bg-slate-800">
                 <img 
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.25&w=800&h=800&q=80" 
+                    src="/slazzer-preview-qr0af.png" 
                     alt="Adam Profile" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                 />
             </div>
             <div className="text-center md:text-left">

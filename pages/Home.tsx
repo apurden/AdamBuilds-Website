@@ -47,11 +47,11 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Photo of Me Placeholder */}
             <div className="relative group rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-              <div className="aspect-[4/3] bg-slate-800 relative">
+              <div className="aspect-[4/3] bg-gradient-to-b from-brand-purple/20 to-brand-dark relative">
                  <img 
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2.25&w=800&h=800&q=80" 
+                    src="/slazzer-preview-qr0af.png" 
                     alt="Adam Builds Profile" 
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
+                    className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
                  />
               </div>
             </div>
