@@ -1,6 +1,8 @@
 import React from 'react';
 import { Camera, Code, Heart, Mail, Globe } from 'lucide-react';
 
+// REMOVED THE IMPORT LINE
+
 const About: React.FC = () => {
   return (
     <div className="min-h-screen pt-24 px-6 pb-20">
@@ -8,6 +10,7 @@ const About: React.FC = () => {
         {/* Profile Header */}
         <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-brand-accent shadow-[0_0_30px_rgba(168,85,247,0.3)] shrink-0 bg-slate-800">
+                {/* FIX: Use direct path starting with / */}
                 <img 
                     src="/slazzer-preview-qr0af.png" 
                     alt="Adam Profile" 
@@ -24,7 +27,7 @@ const About: React.FC = () => {
             </div>
         </div>
 
-        {/* Content Blocks */}
+        {/* Content Blocks (Keep existing code) */}
         <div className="space-y-16">
             <div className="bg-card-gradient border border-white/5 p-8 rounded-2xl">
                 <p className="text-slate-300 text-lg leading-8">
