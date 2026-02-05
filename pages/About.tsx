@@ -1,7 +1,4 @@
 import React from 'react';
-import { Camera, Code, Heart, Mail, Globe } from 'lucide-react';
-
-// REMOVED THE IMPORT LINE
 
 const About: React.FC = () => {
   return (
@@ -9,12 +6,11 @@ const About: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Profile Header */}
         <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-brand-accent shadow-[0_0_30px_rgba(168,85,247,0.3)] shrink-0 bg-slate-800">
-                {/* FIX: Use direct path starting with / */}
+            <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 flex items-center justify-center">
                 <img 
                     src="/slazzer-preview-qr0af.png" 
                     alt="Adam Profile" 
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-contain"
                 />
             </div>
             <div className="text-center md:text-left">
@@ -22,37 +18,42 @@ const About: React.FC = () => {
                     Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-cta">Adam.</span>
                 </h1>
                 <p className="text-xl text-slate-300 leading-relaxed max-w-lg">
-                    I started this channel to document my journey into Vibe Coding.
+                    I'm on a journey of learning AI tools to build real software without writing a single line of code. .
                 </p>
             </div>
         </div>
 
-        {/* Content Blocks (Keep existing code) */}
+        {/* Content Blocks */}
         <div className="space-y-16">
             <div className="bg-card-gradient border border-white/5 p-8 rounded-2xl">
                 <p className="text-slate-300 text-lg leading-8">
-                    I'm using AI tools like <strong>Claude</strong>, <strong>Google Antigravity</strong>, and <strong>n8n workflows</strong> to build real software without writing a single line of code.
+                    I'm using AI tools to build real software without writing a single line of code.
                 </p>
                 <p className="text-slate-300 text-lg leading-8 mt-4">
                     I'm here to share what I am learning and show you exactly how I'm building, and hope to inspire you to do the same (mistakes included).
                 </p>
             </div>
 
-            <div className="bg-card-gradient border border-white/5 p-8 rounded-2xl">
-                <div className="flex items-center gap-3 mb-6">
-                    <Heart className="text-brand-cta" size={28} />
-                    <h2 className="text-2xl font-bold">Join the Exploration</h2>
-                </div>
-                <div className="space-y-4">
-                    <a href="https://www.adambuilds.io" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-brand-cta transition-colors">
-                        <Globe size={20} />
-                        <span>Get our newsletter: www.adambuilds.io</span>
-                    </a>
-                    <a href="mailto:adam@adambuilds.io" className="flex items-center gap-3 text-slate-300 hover:text-brand-cta transition-colors">
-                        <Mail size={20} />
-                        <span>Contact: adam@adambuilds.io</span>
-                    </a>
-                </div>
+            {/* Subscribe Section */}
+            <div className="bg-card-gradient border border-white/5 rounded-3xl p-10 md:p-16 relative overflow-hidden text-center">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full blur-[80px] -z-10"></div>
+                
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Subscribe Today!</h2>
+                <p className="text-slate-400 mb-8 max-w-lg mx-auto">Get the latest AI tools, workflow automations, and practical vibe coding tips delivered straight to your inbox.</p>
+                
+                <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    className="flex-1 px-5 py-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent/50 transition-colors"
+                    />
+                    <button 
+                    type="submit"
+                    className="px-6 py-3 bg-brand-cta text-black font-bold rounded-lg hover:bg-brand-ctaHover transition-colors"
+                    >
+                    Join Free
+                    </button>
+                </form>
             </div>
         </div>
       </div>

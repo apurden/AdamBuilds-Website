@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { NavLink as RouterNavLink, useLocation } from 'react-router-dom';
+import { NavLink as RouterNavLink, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,20 @@ const Navbar: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const handleSubscribeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    
+    if (location.pathname === '/') {
+      const subscribeSection = document.getElementById('subscribe');
+      if (subscribeSection) {
+        subscribeSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } else {
+      navigate('/', { state: { scrollTo: 'subscribe' } });
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -37,7 +52,7 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <div className="flex items-center gap-3">
             <img 
-              src="Logo.PNG" 
+              src="Logo.png" 
               alt="AdamBuilds Logo" 
               className="w-10 h-10 object-contain" 
             />
@@ -64,14 +79,12 @@ const Navbar: React.FC = () => {
 
         {/* CTA Button */}
         <div className="hidden md:flex items-center space-x-4">
-           <a
-            href="https://adambuilds.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center bg-brand-cta hover:bg-brand-ctaHover text-black font-bold px-6 py-2.5 rounded-full transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(45,212,191,0.4)]"
+           <button
+            onClick={handleSubscribeClick}
+            className="flex items-center justify-center bg-brand-cta hover:bg-brand-ctaHover text-black font-bold px-6 py-2.5 rounded-full transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(45,212,191,0.4)] cursor-pointer"
           >
             <span className="tracking-wide">SUBSCRIBE</span>
-          </a>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -98,14 +111,12 @@ const Navbar: React.FC = () => {
               {link.label}
             </RouterNavLink>
           ))}
-          <a
-            href="https://adambuilds.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center space-x-2 bg-brand-cta text-black font-bold px-6 py-3 rounded-full"
+          <button
+            onClick={handleSubscribeClick}
+            className="flex items-center justify-center space-x-2 bg-brand-cta text-black font-bold px-6 py-3 rounded-full cursor-pointer"
           >
             <span>SUBSCRIBE</span>
-          </a>
+          </button>
         </div>
       )}
     </nav>
