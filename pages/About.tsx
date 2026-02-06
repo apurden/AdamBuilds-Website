@@ -1,4 +1,5 @@
 import React from 'react';
+import NewsletterForm from '../components/NewsletterForm';
 
 const About: React.FC = () => {
   return (
@@ -41,19 +42,7 @@ const About: React.FC = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Subscribe Today!</h2>
                 <p className="text-slate-400 mb-8 max-w-lg mx-auto">Get the latest AI tools, workflow automations, and practical vibe coding tips delivered straight to your inbox.</p>
                 
-                <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                    <input 
-                    type="email" 
-                    placeholder="Enter your email" 
-                    className="flex-1 px-5 py-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent/50 transition-colors"
-                    />
-                    <button 
-                    type="submit"
-                    className="px-6 py-3 bg-brand-cta text-black font-bold rounded-lg hover:bg-brand-ctaHover transition-colors"
-                    >
-                    Join Free
-                    </button>
-                </form>
+                <NewsletterForm />
             </div>
         </div>
       </div>
