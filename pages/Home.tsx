@@ -3,6 +3,8 @@ import { ArrowRight, PlayCircle, Code, Zap, Bot } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 import NewsletterForm from '../components/NewsletterForm';
 import FadeIn from '../components/FadeIn';
+// CRITICAL FIX: Import the image from the root directory
+import ProfileImage from '../slazzer-preview-qr0af.png';
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -71,11 +73,12 @@ const Home: React.FC = () => {
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Photo of Me Placeholder */}
+            {/* Photo of Me */}
             <FadeIn direction="right" className="relative group">
               <div className="aspect-[4/3] relative">
+                 {/* FIX: Use the imported variable 'ProfileImage' here */}
                  <img 
-                    src="/slazzer-preview-qr0af.png" 
+                    src={ProfileImage} 
                     alt="Adam Builds Profile" 
                     className="w-full h-full object-contain transition-opacity"
                  />
