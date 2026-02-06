@@ -14,7 +14,7 @@ const Home: React.FC = () => {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-      }, 100); // Small delay to ensure DOM is ready
+      }, 100); 
       return () => clearTimeout(timer);
     }
   }, [location]);
@@ -23,7 +23,6 @@ const Home: React.FC = () => {
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 lg:py-32 px-6">
-        {/* Background blobs */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-purple/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-cta/10 rounded-full blur-3xl -z-10"></div>
 
