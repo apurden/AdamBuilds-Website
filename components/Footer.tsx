@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
           <h4 className="text-white font-semibold mb-4">Connect</h4>
           <div className="flex space-x-4">
             <a href="mailto:adam@adambuilds.io" className="text-slate-400 hover:text-brand-cta transition-colors"><Mail size={20} /></a>
-            <a href="https://youtube.com" className="text-slate-400 hover:text-brand-cta transition-colors"><Youtube size={20} /></a>
+            <a href="https://www.youtube.com/@AdamVincentBuilds" className="text-slate-400 hover:text-brand-cta transition-colors"><Youtube size={20} /></a>
           </div>
         </div>
       </div>
