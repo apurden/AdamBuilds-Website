@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NavLink as RouterNavLink, useLocation, useNavigate } from 'react-router-dom';
-// CRITICAL FIX: Import the image from the root directory
+// 1. This imports the file so Vite bundles it
 import Logo from '../Logo.png';
 
 const Navbar: React.FC = () => {
@@ -51,9 +51,8 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo Section */}
         <div className="flex items-center gap-3">
-            {/* FIX: Use the imported variable 'Logo' here */}
+            {/* 2. CRITICAL: Use the curly braces {Logo} variable here! */}
             <img 
               src={Logo} 
               alt="AdamBuilds Logo" 
@@ -65,7 +64,6 @@ const Navbar: React.FC = () => {
             </RouterNavLink>
         </div>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <RouterNavLink
@@ -80,7 +78,6 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA Button */}
         <div className="hidden md:flex items-center space-x-4">
            <button
             onClick={handleSubscribeClick}
@@ -90,7 +87,6 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -99,7 +95,6 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Nav Overlay */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-brand-dark border-b border-white/10 p-6 flex flex-col space-y-4 shadow-2xl">
           {navLinks.map((link) => (

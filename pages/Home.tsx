@@ -3,7 +3,7 @@ import { ArrowRight, PlayCircle, Code, Zap, Bot } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 import NewsletterForm from '../components/NewsletterForm';
 import FadeIn from '../components/FadeIn';
-// CRITICAL FIX: Import the image from the root directory
+// 1. Import the image
 import ProfileImage from '../slazzer-preview-qr0af.png';
 
 const Home: React.FC = () => {
@@ -23,7 +23,6 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
       <section className="relative overflow-hidden py-20 lg:py-32 px-6">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-purple/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-cta/10 rounded-full blur-3xl -z-10"></div>
@@ -69,14 +68,12 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Content / "Vibe" Section */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Photo of Me */}
             <FadeIn direction="right" className="relative group">
               <div className="aspect-[4/3] relative">
-                 {/* FIX: Use the imported variable 'ProfileImage' here */}
+                 {/* 2. CRITICAL: Use the curly braces {ProfileImage} here! */}
                  <img 
                     src={ProfileImage} 
                     alt="Adam Builds Profile" 
@@ -85,7 +82,6 @@ const Home: React.FC = () => {
               </div>
             </FadeIn>
 
-            {/* Text Content */}
             <div>
               <FadeIn delay={100}>
                 <h2 className="text-3xl font-bold mb-6">Let’s Build <span className="text-brand-cta">the Future Together</span></h2>
@@ -136,7 +132,6 @@ const Home: React.FC = () => {
         </div>
       </section>
       
-      {/* Newsletter */}
       <section id="subscribe" className="py-20 px-6">
         <FadeIn delay={200} className="max-w-4xl mx-auto">
           <div className="text-center bg-card-gradient border border-white/5 rounded-3xl p-10 md:p-16 relative overflow-hidden">
