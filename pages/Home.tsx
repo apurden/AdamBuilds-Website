@@ -43,7 +43,7 @@ const Home: React.FC = () => {
 
           <FadeIn delay={200}>
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-               Exploring the intersection of AI tools, workflow automation, and vibe coding. A place to explore tools, news, and learn how to build without writing a single line of code. I hope you enjoy learning about AI as much as I do!
+               Exploring the intersection of AI tools, workflow automation, and vibe coding. A place to explore tools, news, and learn how to build without writing a single line of code.
             </p>
           </FadeIn>
 
