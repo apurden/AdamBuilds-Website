@@ -3,8 +3,6 @@ import { ArrowRight, PlayCircle, Code, Zap, Bot } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 import NewsletterForm from '../components/NewsletterForm';
 import FadeIn from '../components/FadeIn';
-// FIX 1: Correct Relative Path to assets
-import ProfileImage from '../assets/adam.png';
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -73,9 +71,8 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="right" className="relative group">
               <div className="aspect-[4/3] relative">
-                 {/* FIX 2: Use the imported variable */}
                  <img 
-                    src={ProfileImage} 
+                    src="/assets/adam.png" 
                     alt="Adam Builds Profile" 
                     className="w-full h-full object-contain transition-opacity"
                  />
@@ -84,7 +81,7 @@ const Home: React.FC = () => {
 
             <div>
               <FadeIn delay={100}>
-                <h2 className="text-3xl font-bold mb-6">Let’s Build <span className="text-brand-cta">the Future Together</span></h2>
+                <h2 className="text-3xl font-bold mb-6">Let's Build <span className="text-brand-cta">the Future Together</span></h2>
                 <p className="text-slate-400 mb-6 leading-relaxed">
                   I'm Adam - On a journey of learning AI tools to build real software without writing a single line of code. Join me as we explore how to:
                 </p>

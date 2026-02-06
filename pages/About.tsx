@@ -1,8 +1,6 @@
 import React from 'react';
 import NewsletterForm from '../components/NewsletterForm';
 import FadeIn from '../components/FadeIn';
-// FIX 1: Import the image
-import ProfileImage from '../assets/adam.png';
 
 const About: React.FC = () => {
   return (
@@ -11,9 +9,8 @@ const About: React.FC = () => {
         {/* Profile Header */}
         <FadeIn className="flex flex-col md:flex-row items-center gap-10 mb-20">
             <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 flex items-center justify-center">
-                {/* FIX 2: Use the variable */}
                 <img 
-                    src={ProfileImage} 
+                    src="/assets/adam.png" 
                     alt="Adam Profile" 
                     className="w-full h-full object-contain"
                 />

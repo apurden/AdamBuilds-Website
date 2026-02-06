@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NavLink as RouterNavLink, useLocation, useNavigate } from 'react-router-dom';
-// FIX 1: Import the image using the relative path (Standard for Vite)
-import Logo from '../assets/logo.png';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,9 +50,8 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
-            {/* FIX 2: Use the imported {Logo} variable */}
             <img 
-              src={Logo} 
+              src="/assets/logo.png" 
               alt="AdamBuilds Logo" 
               className="w-10 h-10 object-contain" 
             />
