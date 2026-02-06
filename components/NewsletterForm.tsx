@@ -9,17 +9,28 @@ const NewsletterForm: React.FC = () => {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    const email = formData.get('email_address') as string;
+
+    // Use URLSearchParams to send data as application/x-www-form-urlencoded
+    // This mimics a standard HTML form submission and is more likely to be accepted
+    // by the Kit/ConvertKit endpoint than multipart/form-data sent by FormData
+    const params = new URLSearchParams();
+    params.append('email_address', email);
 
     try {
-      // mode: 'no-cors' is used because standard form endpoints typically don't set CORS headers
-      // for cross-origin AJAX requests. This allows the request to be sent (opaque),
-      // ensuring the subscription happens on the server side without a browser error blocking it.
+      // mode: 'no-cors' allows the request to be sent to a different domain without 
+      // strict CORS headers on the server side, but returns an opaque response.
       await fetch('https://app.kit.com/forms/905726/subscriptions', {
         method: 'POST',
-        body: formData,
+        body: params,
         mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
       });
       
+      // Since we can't read the response in no-cors mode, we assume success if no network error occurred.
+      // Ideally, the Kit/ConvertKit endpoint processes this correctly now that it's url-encoded.
       setStatus('success');
     } catch (error) {
       console.error('Newsletter submission error:', error);
