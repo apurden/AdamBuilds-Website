@@ -4,7 +4,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import NewsletterForm from '../components/NewsletterForm';
 import FadeIn from '../components/FadeIn';
 // 1. Import the image
-import ProfileImage from '../slazzer-preview-qr0af.png';
+import ProfileImage from '../adam.png';
 
 const Home: React.FC = () => {
   const location = useLocation();

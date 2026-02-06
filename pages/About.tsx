@@ -2,7 +2,7 @@ import React from 'react';
 import NewsletterForm from '../components/NewsletterForm';
 import FadeIn from '../components/FadeIn';
 // 1. Import the profile image from the root
-import ProfileImage from '../slazzer-preview-qr0af.png';
+import ProfileImage from '../adam.png';
 
 const About: React.FC = () => {
   return (

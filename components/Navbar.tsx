@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NavLink as RouterNavLink, useLocation, useNavigate } from 'react-router-dom';
 // 1. This imports the file so Vite bundles it
-import Logo from '../Logo.png';
+import Logo from '../logo.png';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
