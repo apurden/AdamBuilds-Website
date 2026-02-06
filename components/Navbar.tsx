@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
             <img 
-              src="/assets/logo.png" 
+              src="/logo.png" 
               alt="AdamBuilds Logo" 
               className="w-10 h-10 object-contain" 
             />
@@ -110,12 +110,4 @@ const Navbar: React.FC = () => {
             onClick={handleSubscribeClick}
             className="flex items-center justify-center space-x-2 bg-brand-cta text-black font-bold px-6 py-3 rounded-full cursor-pointer"
           >
-            <span>SUBSCRIBE</span>
-          </button>
-        </div>
-      )}
-    </nav>
-  );
-};
-
-export default Navbar;
+            <span>SUBSCRIBE</s

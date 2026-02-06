@@ -10,7 +10,7 @@ const About: React.FC = () => {
         <FadeIn className="flex flex-col md:flex-row items-center gap-10 mb-20">
             <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 flex items-center justify-center">
                 <img 
-                    src="/assets/adam.png" 
+                    src="/adam.png" 
                     alt="Adam Profile" 
                     className="w-full h-full object-contain"
                 />

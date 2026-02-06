@@ -72,7 +72,7 @@ const Home: React.FC = () => {
             <FadeIn direction="right" className="relative group">
               <div className="aspect-[4/3] relative">
                  <img 
-                    src="/assets/adam.png" 
+                    src="/adam.png" 
                     alt="Adam Builds Profile" 
                     className="w-full h-full object-contain transition-opacity"
                  />
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
               <FadeIn delay={100}>
                 <h2 className="text-3xl font-bold mb-6">Let's Build <span className="text-brand-cta">the Future Together</span></h2>
                 <p className="text-slate-400 mb-6 leading-relaxed">
-                  I'm Adam - On a journey of learning AI tools to build useful applications without writing a single line of code. Join me as we explore how to:
+                  I'm Adam - On a journey of learning AI tools to build real software without writing a single line of code. Join me as we explore how to:
                 </p>
               </FadeIn>
               
