@@ -110,4 +110,4 @@ const Navbar: React.FC = () => {
             onClick={handleSubscribeClick}
             className="flex items-center justify-center space-x-2 bg-brand-cta text-black font-bold px-6 py-3 rounded-full cursor-pointer"
           >
-            <span>SUBSCRIBE</s
+            <span>SUBSCRIBE</span>
