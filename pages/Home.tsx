@@ -3,8 +3,6 @@ import { ArrowRight, PlayCircle, Code, Zap, Bot } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 import NewsletterForm from '../components/NewsletterForm';
 import FadeIn from '../components/FadeIn';
-// 1. Import the image
-import ProfileImage from '../adam.png';
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -73,9 +71,8 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="right" className="relative group">
               <div className="aspect-[4/3] relative">
-                 {/* 2. CRITICAL: Use the curly braces {ProfileImage} here! */}
                  <img 
-                    src={ProfileImage} 
+                    src="/assets/adam.png" 
                     alt="Adam Builds Profile" 
                     className="w-full h-full object-contain transition-opacity"
                  />
