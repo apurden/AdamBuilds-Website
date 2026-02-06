@@ -11,24 +11,3 @@ export default defineConfig({
   },
   publicDir: 'assets'
 })
-```
-
-## 3. Create `.gitignore` at the root level:
-```
-# Dependencies
-node_modules
-
-# Build output - DON'T ignore this if doing manual builds
-# dist
-
-# Environment files
-.env
-.env.local
-
-# Editor
-.vscode
-.idea
-
-# OS
-.DS_Store
-Thumbs.db
