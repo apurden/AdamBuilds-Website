@@ -3,7 +3,7 @@ import { ArrowRight, PlayCircle, Code, Zap, Bot } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 import NewsletterForm from '../components/NewsletterForm';
 import FadeIn from '../components/FadeIn';
-// FIX 1: Import the image. "../" goes up one folder to find assets.
+// FIX 1: Correct Relative Path to assets
 import ProfileImage from '../assets/adam.png';
 
 const Home: React.FC = () => {
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="right" className="relative group">
               <div className="aspect-[4/3] relative">
-                 {/* FIX 2: Use the imported variable {ProfileImage} */}
+                 {/* FIX 2: Use the imported variable */}
                  <img 
                     src={ProfileImage} 
                     alt="Adam Builds Profile" 

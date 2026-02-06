@@ -11,7 +11,7 @@ const About: React.FC = () => {
         {/* Profile Header */}
         <FadeIn className="flex flex-col md:flex-row items-center gap-10 mb-20">
             <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 flex items-center justify-center">
-                {/* FIX 2: Use the imported variable */}
+                {/* FIX 2: Use the variable */}
                 <img 
                     src={ProfileImage} 
                     alt="Adam Profile" 
