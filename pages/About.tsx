@@ -20,7 +20,7 @@ const About: React.FC = () => {
                     Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-cta">Adam.</span>
                 </h1>
                 <p className="text-xl text-slate-300 leading-relaxed max-w-lg">
-                    I'm on a journey of learning AI tools to build real software without writing a single line of code. .
+                    I'm on a journey of learning AI tools to build real software without writing a single line of code.
                 </p>
             </div>
         </FadeIn>
