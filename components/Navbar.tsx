@@ -50,8 +50,9 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
+            {/* FIXED: Using Raw GitHub Link from public folder */}
             <img 
-              src="https://github.com/apurden/AdamBuilds-Website/releases/download/v1.0-assets/logo.png" 
+              src="https://raw.githubusercontent.com/apurden/AdamBuilds-Website/main/public/logo.png" 
               alt="AdamBuilds Logo" 
               className="w-10 h-10 object-contain" 
             />
