@@ -9,9 +9,9 @@ const About: React.FC = () => {
         {/* Profile Header */}
         <FadeIn className="flex flex-col md:flex-row items-center gap-10 mb-20">
             <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 flex items-center justify-center">
-                {/* FIXED: Using Raw GitHub Link from public folder */}
+                {/* FIXED: Using Release Asset URL */}
                 <img 
-                    src="https://raw.githubusercontent.com/apurden/AdamBuilds-Website/main/public/adam.png" 
+                    src="https://github.com/apurden/AdamBuilds-Website/releases/download/v1.0-assets/adam.png" 
                     alt="Adam Profile" 
                     className="w-full h-full object-contain"
                 />

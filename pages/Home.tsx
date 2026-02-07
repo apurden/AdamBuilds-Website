@@ -71,9 +71,9 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeIn direction="right" className="relative group">
               <div className="aspect-[4/3] relative">
-                 {/* FIXED: Using Raw GitHub Link from public folder */}
+                 {/* FIXED: Using Release Asset URL */}
                  <img 
-                    src="https://raw.githubusercontent.com/apurden/AdamBuilds-Website/main/public/adam.png" 
+                    src="https://github.com/apurden/AdamBuilds-Website/releases/download/v1.0-assets/adam.png" 
                     alt="Adam Builds Profile" 
                     className="w-full h-full object-contain transition-opacity"
                  />
