@@ -72,7 +72,7 @@ const Home: React.FC = () => {
             <FadeIn direction="right" className="relative group">
               <div className="aspect-[4/3] relative">
                  <img 
-                    src="/adam.png" 
+                    src="https://github.com/apurden/AdamBuilds-Website/releases/download/v1.0-assets/adam.png" 
                     alt="Adam Builds Profile" 
                     className="w-full h-full object-contain transition-opacity"
                  />

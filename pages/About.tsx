@@ -10,7 +10,7 @@ const About: React.FC = () => {
         <FadeIn className="flex flex-col md:flex-row items-center gap-10 mb-20">
             <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 flex items-center justify-center">
                 <img 
-                    src="/adam.png" 
+                    src="https://github.com/apurden/AdamBuilds-Website/releases/download/v1.0-assets/adam.png" 
                     alt="Adam Profile" 
                     className="w-full h-full object-contain"
                 />
@@ -20,7 +20,7 @@ const About: React.FC = () => {
                     Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-cta">Adam.</span>
                 </h1>
                 <p className="text-xl text-slate-300 leading-relaxed max-w-lg">
-                    I'm on a journey of learning AI tools to build real software without writing a single line of code.
+                    I'm on a journey of learning AI tools to build real software without writing a single line of code. .
                 </p>
             </div>
         </FadeIn>

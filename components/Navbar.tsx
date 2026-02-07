@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
             <img 
-              src="/logo.png" 
+              src="https://github.com/apurden/AdamBuilds-Website/releases/download/v1.0-assets/logo.png" 
               alt="AdamBuilds Logo" 
               className="w-10 h-10 object-contain" 
             />
