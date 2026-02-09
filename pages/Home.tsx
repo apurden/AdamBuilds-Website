@@ -21,31 +21,41 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="relative overflow-hidden py-20 lg:py-32 px-6">
+      <section className="relative overflow-hidden pt-10 pb-20 lg:pt-20 lg:pb-32 px-6">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-purple/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-cta/10 rounded-full blur-3xl -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <FadeIn direction="down">
-            <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-              <span className="text-brand-cta text-xs font-bold tracking-wider uppercase">Vibe Coding is Here</span>
-            </div>
-          </FadeIn>
           
           <FadeIn delay={100}>
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-500 pb-2">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-10 bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-500 pb-2">
               Build Real Software.<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-cta">No Code Required.</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={200}>
+            <div className="w-full max-w-4xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.15)] border border-white/10 bg-black/50">
+               <div className="aspect-video relative">
+                  <iframe 
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/Tyd24xC26ro?rel=0&modestbranding=1" 
+                    title="AdamBuilds Intro Video"
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowFullScreen
+                  ></iframe>
+               </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={300}>
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
                Exploring the intersection of AI tools, workflow automation, and vibe coding. A place to explore tools, news, and learn how to build without writing a single line of code.
             </p>
           </FadeIn>
 
-          <FadeIn delay={300}>
+          <FadeIn delay={400}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <NavLink 
                 to="/tools" 

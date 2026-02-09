@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
             <RouterNavLink
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-brand-accent ${
+              className={`text-base font-medium transition-colors hover:text-brand-accent ${
                 isActive(link.path) ? 'text-brand-accent' : 'text-slate-300'
               }`}
             >
