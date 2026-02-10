@@ -35,7 +35,7 @@ const Home: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={200}>
-            <div className="w-full max-w-4xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.15)] border border-white/10 bg-black/50">
+            <div className="w-full max-w-3xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.15)] border border-white/10 bg-black/50">
                <div className="aspect-video relative">
                   <iframe 
                     className="absolute top-0 left-0 w-full h-full"
