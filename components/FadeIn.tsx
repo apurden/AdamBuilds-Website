@@ -1,4 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -6,7 +10,7 @@ interface FadeInProps {
   className?: string;
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
   fullWidth?: boolean;
-  viewportMargin?: string; // Allow customizing when it triggers (e.g. "-100px")
+  stagger?: number;
 }
 
 const FadeIn: React.FC<FadeInProps> = ({ 
@@ -15,62 +19,55 @@ const FadeIn: React.FC<FadeInProps> = ({
   className = '', 
   direction = 'up', 
   fullWidth = false,
-  viewportMargin = '-50px' // Default: trigger when element is 50px inside viewport
+  stagger = 0
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        // Once the element enters the viewport, trigger animation and stop observing
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          if (domRef.current) observer.unobserve(domRef.current);
-        }
-      });
-    }, {
-      rootMargin: viewportMargin,
-      threshold: 0.1 // Trigger when 10% of the element is visible
-    });
+    const ctx = gsap.context(() => {
+      const el = domRef.current;
+      if (!el) return;
 
-    const currentRef = domRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+      const vars: gsap.TweenVars = {
+        opacity: 0,
+        duration: 1,
+        delay: delay / 1000,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      };
 
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
+      switch (direction) {
+        case 'up': vars.y = 40; break;
+        case 'down': vars.y = -40; break;
+        case 'left': vars.x = 40; break;
+        case 'right': vars.x = -40; break;
       }
-    };
-  }, [viewportMargin]);
 
-  // Define initial positions based on direction
-  const getInitialTransform = () => {
-    switch (direction) {
-      case 'up': return 'translate-y-8';
-      case 'down': return '-translate-y-8';
-      case 'left': return 'translate-x-8';
-      case 'right': return '-translate-x-8';
-      case 'none': return '';
-      default: return 'translate-y-8';
-    }
-  };
+      if (stagger > 0) {
+        gsap.from(el.children, {
+          ...vars,
+          stagger: stagger,
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+          }
+        });
+      } else {
+        gsap.from(el, vars);
+      }
+    }, domRef);
+
+    return () => ctx.revert();
+  }, [delay, direction, stagger]);
 
   return (
     <div
       ref={domRef}
-      className={`
-        ${fullWidth ? 'w-full' : ''}
-        ${className}
-        transition-all duration-700 ease-out will-change-[opacity,transform]
-        ${isVisible 
-          ? 'opacity-100 translate-y-0 translate-x-0 blur-0' 
-          : `opacity-0 blur-[2px] ${getInitialTransform()}`
-        }
-      `}
-      style={{ transitionDelay: `${delay}ms` }}
+      className={`${fullWidth ? 'w-full' : ''} ${className}`}
     >
       {children}
     </div>
