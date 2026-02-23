@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-dark: #0f0c29;
+  --color-brand-purple: #302b63;
+  --color-brand-slate: #24243e;
+  --color-brand-accent: #a855f7;
+  --color-brand-cta: #2dd4bf;
+  --color-brand-cta-hover: #14b8a6;
+
+  --radius-3xl: 2rem;
+  --radius-4xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-white font-sans antialiased selection:bg-brand-accent selection:text-white;
+  }
+}
+
+@layer components {
+  .btn-magnetic {
+    @apply relative overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:scale-[1.03] active:scale-95;
+  }
+
+  .btn-magnetic span.bg-layer {
+    @apply absolute inset-0 bg-white/10 -translate-x-full transition-transform duration-500 ease-out;
+  }
+
+  .btn-magnetic:hover span.bg-layer {
+    @apply translate-x-0;
+  }
+
+  .link-lift {
+    @apply transition-transform duration-300 hover:-translate-y-[1px];
+  }
+
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2rem] overflow-hidden;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-accent to-brand-cta;
+  }
+}
+
+/* GSAP ScrollTrigger Pinning Styles */
+.stacking-container {
+  position: relative;
+  width: 100%;
+}
+
+.stacking-card {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 10vh;
+}

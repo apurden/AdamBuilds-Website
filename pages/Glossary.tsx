@@ -4,14 +4,23 @@ import { GlossaryTerm } from '../types';
 import FadeIn from '../components/FadeIn';
 
 const glossaryData: GlossaryTerm[] = [
+  { term: 'Artificial Intelligence (AI)', definition: 'The simulation of human intelligence processes by machines, especially computer systems.', category: 'Basics' },
+  { term: 'Context Window', definition: 'The limit on the amount of text (tokens) a model can consider at one time (input + output).', category: 'Architecture' },
+  { term: 'Deep Learning', definition: 'A subset of machine learning based on artificial neural networks with multiple layers.', category: 'Basics' },
+  { term: 'Fine-tuning', definition: 'The process of taking a pre-trained model and training it further on a specific dataset to specialize it for a certain task.', category: 'Training' },
+  { term: 'Generative AI', definition: 'A type of artificial intelligence that can create new content, such as text, images, or audio, based on the data it was trained on.', category: 'Basics' },
+  { term: 'Hallucination', definition: 'When an AI model confidently generates false or nonsensical information.', category: 'Issues' },
+  { term: 'Large Language Model (LLM)', definition: 'A type of AI model designed to understand and generate human language, trained on massive amounts of text data.', category: 'Architecture' },
+  { term: 'Machine Learning (ML)', definition: 'A branch of AI that focuses on building systems that learn from data, rather than being explicitly programmed.', category: 'Basics' },
+  { term: 'Multimodal', definition: 'The ability of a model to process and generate multiple types of media (text, images, audio) simultaneously.', category: 'Capabilities' },
+  { term: 'Neural Network', definition: 'A computing system inspired by the biological neural networks that constitute animal brains.', category: 'Architecture' },
+  { term: 'Parameters', definition: 'The internal variables that the model learns during training. More parameters generally mean a more capable model.', category: 'Architecture' },
+  { term: 'Prompt Engineering', definition: 'The practice of designing and refining the input text (prompts) given to an AI model to get the best possible output.', category: 'Techniques' },
   { term: 'RAG', definition: 'Retrieval-Augmented Generation. A technique where an LLM is provided with external data (context) to generate more accurate answers.', category: 'Architecture' },
-  { term: 'Zero-shot Learning', definition: 'The ability of a model to perform a task without having seen any examples of that specific task during training.', category: 'Training' },
   { term: 'Temperature', definition: 'A parameter that controls the randomness of the model\'s output. Higher values (0.8+) make output more creative/random, lower values (0.2) make it more focused/deterministic.', category: 'Parameters' },
   { term: 'Token', definition: 'The basic unit of text processing for an LLM. Roughly 0.75 words. "Hamburger" might be 2-3 tokens.', category: 'Basics' },
-  { term: 'Fine-tuning', definition: 'The process of taking a pre-trained model and training it further on a specific dataset to specialize it for a certain task.', category: 'Training' },
-  { term: 'Hallucination', definition: 'When an AI model confidently generates false or nonsensical information.', category: 'Issues' },
-  { term: 'Multimodal', definition: 'The ability of a model to process and generate multiple types of media (text, images, audio) simultaneously.', category: 'Capabilities' },
-  { term: 'Context Window', definition: 'The limit on the amount of text (tokens) a model can consider at one time (input + output).', category: 'Architecture' },
+  { term: 'Transformer', definition: 'A type of neural network architecture introduced by Google in 2017 that revolutionized natural language processing by tracking relationships in sequential data.', category: 'Architecture' },
+  { term: 'Zero-shot Learning', definition: 'The ability of a model to perform a task without having seen any examples of that specific task during training.', category: 'Training' },
 ];
 
 const Glossary: React.FC = () => {
