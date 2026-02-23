@@ -28,13 +28,13 @@ const Tools: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen pt-40 px-6 pb-20">
+    <div className="min-h-screen pt-24 px-6 pb-20">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <FadeIn direction="down">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">AI <span className="text-gradient">Toolbox</span></h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">AI <span className="text-brand-accent">Toolbox</span></h1>
+            <p className="text-slate-400 max-w-2xl mx-auto">
               A curated list of the tools I use daily to build, create, and automate.
             </p>
           </FadeIn>
@@ -42,16 +42,16 @@ const Tools: React.FC = () => {
 
         {/* Filters */}
         <FadeIn delay={200}>
-          <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
-            <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
+            <div className="flex flex-wrap justify-center gap-2">
               {categories.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     activeCategory === cat 
-                      ? 'bg-brand-accent text-white shadow-xl shadow-brand-accent/20' 
-                      : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white border border-white/5'
+                      ? 'bg-brand-accent text-white shadow-lg shadow-brand-accent/25' 
+                      : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
                   }`}
                 >
                   {cat}
@@ -59,44 +59,45 @@ const Tools: React.FC = () => {
               ))}
             </div>
             
-            <div className="relative w-full md:w-80">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-500" size={20} />
+            <div className="relative w-full md:w-64">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-500" size={18} />
               <input 
                 type="text" 
                 placeholder="Search tools..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-6 py-3 bg-black/30 border border-white/10 rounded-full text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent/50 transition-all backdrop-blur-sm"
+                className="w-full pl-10 pr-4 py-2 bg-black/30 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent/50"
               />
             </div>
           </div>
         </FadeIn>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTools.map((tool, index) => (
-            <FadeIn key={tool.id} delay={index * 100}>
-              <div className="glass-card h-full p-8 hover:bg-white/[0.05] transition-all group hover:-translate-y-2 duration-500">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="p-4 bg-brand-accent/10 rounded-2xl text-brand-accent group-hover:scale-110 transition-transform">
-                     <span className="text-2xl font-bold">{tool.name.charAt(0)}</span>
+            <FadeIn key={tool.id} delay={index * 100} fullWidth>
+              <div className="group h-full bg-card-gradient border border-white/5 rounded-xl p-6 hover:border-brand-accent/30 transition-all hover:-translate-y-1">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="p-3 bg-white/5 rounded-lg">
+                     {/* Placeholder icon based on first letter */}
+                     <span className="text-xl font-bold text-white">{tool.name.charAt(0)}</span>
                   </div>
                   {tool.isNew && (
-                    <span className="px-3 py-1 bg-brand-cta/20 text-brand-cta text-[10px] font-bold rounded-full uppercase tracking-widest">New</span>
+                    <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded uppercase">New</span>
                   )}
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-brand-cta transition-colors">{tool.name}</h3>
-                <p className="text-xs text-brand-accent mb-4 uppercase tracking-widest font-bold">{tool.category}</p>
-                <p className="text-slate-400 text-base mb-8 leading-relaxed">
+                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-brand-cta transition-colors">{tool.name}</h3>
+                <p className="text-xs text-brand-accent mb-3 uppercase tracking-wider font-semibold">{tool.category}</p>
+                <p className="text-slate-400 text-sm mb-6 leading-relaxed">
                   {tool.description}
                 </p>
                 
                 <a 
                   href={tool.url}
-                  className="inline-flex items-center text-sm font-bold text-white hover:text-brand-cta transition-colors link-lift"
+                  className="inline-flex items-center text-sm font-medium text-white hover:text-brand-cta transition-colors"
                 >
-                  Visit Website <ExternalLink size={16} className="ml-2" />
+                  Visit Website <ExternalLink size={14} className="ml-1" />
                 </a>
               </div>
             </FadeIn>
@@ -105,8 +106,8 @@ const Tools: React.FC = () => {
 
         {filteredTools.length === 0 && (
             <FadeIn>
-              <div className="text-center py-32 text-slate-500">
-                  <p className="text-xl">No tools found matching your criteria.</p>
+              <div className="text-center py-20 text-slate-500">
+                  <p>No tools found matching your criteria.</p>
               </div>
             </FadeIn>
         )}
