@@ -32,43 +32,33 @@ ChatGPT 5.4 also expands its multimodal capabilities. It can now process and ana
 With the release of ChatGPT 5.4 and 5.4 Codex, OpenAI has once again raised the bar for what AI can achieve. As developers and users begin to explore these new tools, we can expect a wave of innovation that will reshape industries and redefine how we interact with technology.`
   },
   {
-    id: '1',
-    title: 'OpenAI Releases Sora: A New Era for Video?',
-    date: 'Oct 12, 2024',
-    category: 'Industry News',
-    excerpt: 'The text-to-video model has shocked the creative world with its physics simulation and temporal consistency.',
-    readTime: '5 min read',
-    imageUrl: 'https://picsum.photos/600/400?random=1',
-    content: 'The text-to-video model has shocked the creative world with its physics simulation and temporal consistency. This is a placeholder for the full article content.'
-  },
-  {
-    id: '2',
-    title: 'Cursor vs. VS Code: Why I Switched',
-    date: 'Oct 08, 2024',
-    category: 'Opinion',
-    excerpt: 'Is the "AI-first" editor hype real? Here is a breakdown of how it changed my daily workflow.',
-    readTime: '8 min read',
-    imageUrl: 'https://picsum.photos/600/400?random=2',
-    content: 'Is the "AI-first" editor hype real? Here is a breakdown of how it changed my daily workflow. This is a placeholder for the full article content.'
-  },
-  {
-    id: '3',
-    title: 'The Rise of Local LLMs on Mac',
-    date: 'Sep 29, 2024',
-    category: 'Tutorial',
-    excerpt: 'How to run Llama 3 8B locally on your M3 Macbook Pro using Ollama.',
+    id: '6',
+    title: 'Google Antigravity: Navigating the Future of Agentic AI',
+    date: 'Mar 14, 2026',
+    category: 'Feature Release',
+    excerpt: 'Google unveils its groundbreaking Antigravity AI capabilities, fundamentally changing the agentic workflow landscape.',
     readTime: '6 min read',
-    imageUrl: 'https://picsum.photos/600/400?random=3',
-    content: 'How to run Llama 3 8B locally on your M3 Macbook Pro using Ollama. This is a placeholder for the full article content.'
-  },
-  {
-    id: '4',
-    title: 'Agentic Workflows Explained',
-    date: 'Sep 15, 2024',
-    category: 'Deep Dive',
-    excerpt: 'Moving beyond chat interfaces: How agents are beginning to perform multi-step complex tasks.',
-    readTime: '10 min read',
-    imageUrl: 'https://picsum.photos/600/400?random=4',
-    content: 'Moving beyond chat interfaces: How agents are beginning to perform multi-step complex tasks. This is a placeholder for the full article content.'
+    imageUrl: '/antigravity-logo.png',
+    content: `Google has just expanded its frontiers into specialized, agentic workflows with the introduction of **Google Antigravity**. Designed from the ground up as a sophisticated pair-programming AI and autonomous execution agent, Antigravity stands out as the next evolution of intelligent developer tools.
+
+### What is Google Antigravity?
+
+Antigravity is not just a chatbot—it is an autonomous agent capable of actively engaging with the user's workspace securely and effectively. It shifts the paradigm from "I tell you how to write code" to "I can write, execute, test, and commit the code across your entire setup."
+
+### Core Features of Antigravity
+
+Some of the groundbreaking features available in this release include:
+
+*   **Advanced Context Gathering**: By automatically analyzing the current user context, reading from relevant internal knowledge bases, and analyzing project files, Antigravity formulates deeply contextualized action plans.
+*   **Multi-Step Agentic Workflows**: It breaks down high-level user goals into structured tasks, tackling them step-by-step with real-time feedback and dynamic rerouting if it hits an unexpected error or exception.
+*   **Seamless Multimodality & Media Creation**: Need an asset? Antigravity seamlessly ties into Google's latest imaging platforms to dynamically generate, format, and embed visually striking UI assets—like logos and mockups—on the fly.
+*   **Robust Sandbox Execution**: The agent safely utilizes terminal tools and specialized sandboxed tools to verify everything works properly before marking a task as complete.
+
+### Reaching New Heights
+
+With the current release of Google Antigravity, developers now have a true collaborative partner. From rapid prototyping to sophisticated debugging and deployment workflows, Antigravity paves the way for a more streamlined, fluid, and powerful web development experience.
+
+Stay tuned as Google continues to push the envelope on what a local agentic AI can achieve.
+`
   }
 ];

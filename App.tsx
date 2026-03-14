@@ -7,6 +7,7 @@ import Tools from './pages/Tools';
 import News from './pages/News';
 import Glossary from './pages/Glossary';
 import About from './pages/About';
+import Article from './pages/Article';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -30,6 +31,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/news" element={<News />} />
+            <Route path="/news/:id" element={<Article />} />
             <Route path="/glossary" element={<Glossary />} />
             <Route path="/about" element={<About />} />
           </Routes>
