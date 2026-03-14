@@ -45,7 +45,7 @@ const Article: React.FC = () => {
               <img 
                 src={article.imageUrl} 
                 alt={article.title} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -73,7 +73,7 @@ const Article: React.FC = () => {
                     <img 
                       src={nextArticle.imageUrl} 
                       alt={nextArticle.title} 
-                      className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
+                      className="absolute inset-0 w-full h-full object-cover object-center opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"
                     />
                   )}
                   <div className="relative z-10 text-center">
