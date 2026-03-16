@@ -24,7 +24,7 @@ const News: React.FC = () => {
                           <img 
                               src={item.imageUrl} 
                               alt={item.title} 
-                              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                              className="w-full h-full object-cover object-center transition-transform duration-500 scale-125 group-hover:scale-[1.3] opacity-80 group-hover:opacity-100"
                               referrerPolicy="no-referrer"
                           />
                       </div>

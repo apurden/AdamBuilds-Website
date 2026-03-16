@@ -2,13 +2,47 @@ import { NewsItem } from '../types';
 
 export const newsData: NewsItem[] = [
   {
+    id: '7',
+    title: 'NVIDIA GTC 2026: Jensen Huang Unveils $4 Trillion AI Economy',
+    date: 'Mar 16, 2026',
+    category: 'Industry News',
+    excerpt: 'NVIDIA CEO Jensen Huang outlines a massive expansion of the AI economy, projecting data center spending to hit $4 trillion by 2030.',
+    readTime: '8 min read',
+    imageUrl: '/gtc-2026.png',
+    content: `At the opening keynote of **GTC 2026**, NVIDIA CEO Jensen Huang delivered a visionary roadmap that has sent shockwaves through the tech world. The core message was clear: we are no longer just in an "AI boom"—we are witnessing the birth of a **$4 trillion AI economy**.
+
+### The $4 Trillion Milestone
+
+Huang projected that annual data center spending will reach a staggering $4 trillion by 2030. This growth is driven by the transition from traditional general-purpose computing to **accelerated computing** and the exponential demand for **agentic AI**. 
+
+"Every company will eventually have a fleet of AI agents," Huang stated, "not just to assist humans, but to autonomously drive business processes, from supply chain optimization to creative design."
+
+### Introducing NemoClaw: Enterprise Agentic AI
+
+One of the most significant announcements was the launch of **NemoClaw**. This open-source platform is designed specifically for building and deploying enterprise AI agents. NemoClaw provides:
+
+*   **Autonomous Reasoning**: Agents can break down complex business goals into actionable steps.
+*   **Secure Tool Integration**: Seamlessly connects to existing enterprise databases and APIs within a secure sandbox.
+*   **Multi-Agent Coordination**: Allows disparate AI agents to collaborate on large-scale projects without human intervention.
+
+### The Inflection of Physical AI
+
+Huang also highlighted the "inflection in physical AI"—the convergence of advanced LLMs with robotics. With the new **Vera Rubin** platform (named after the pioneering astronomer), NVIDIA is providing the compute power necessary for autonomous machines to perceive, reason, and act in the physical world with human-like precision.
+
+### Why This Matters
+
+GTC 2026 isn't just about faster chips; it's about the infrastructure for a world where AI is a fundamental utility. As NVIDIA pushes the boundaries of what's possible, the tech landscape is rapidly evolving into a more automated, agent-driven future.
+
+Stay tuned for more updates as we dive deeper into the technical specifications of the Vera Rubin architecture and the NemoClaw ecosystem.`
+  },
+  {
     id: '5',
     title: 'ChatGPT 5.4 and 5.4 Codex: A Leap in Capabilities',
     date: 'Mar 14, 2026',
     category: 'Product Update',
     excerpt: 'OpenAI has unveiled ChatGPT 5.4 and the new 5.4 Codex, bringing unprecedented reasoning, coding capabilities, and multimodal understanding to developers and users alike.',
     readTime: '7 min read',
-    imageUrl: 'https://unsplash.com/photos/fvxNerA8uk0/download?force=true',
+    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000',
     content: `OpenAI has officially unveiled **ChatGPT 5.4** and its developer-focused counterpart, **5.4 Codex**. This release marks a significant milestone in the evolution of large language models, introducing capabilities that bridge the gap between AI assistance and autonomous agency.
 
 ### Unprecedented Reasoning
@@ -19,9 +53,9 @@ One of the most striking improvements in ChatGPT 5.4 is its advanced reasoning e
 
 For the developer community, 5.4 Codex is the true star of the show. Built on the foundation of 5.4 but fine-tuned specifically for software engineering tasks, Codex offers:
 
-*   **Context-Aware Code Generation:** It doesn't just write snippets; it understands the broader architecture of your project, ensuring the code it generates integrates seamlessly.
-*   **Advanced Debugging:** Feed it an error trace, and Codex can pinpoint the root cause, suggest a fix, and even write the tests to prevent future regressions.
-*   **Legacy Code Refactoring:** It can analyze outdated codebases and automatically refactor them to modern standards, improving performance and maintainability.
+*   **Context-Aware Code Generation**: It doesn't just write snippets; it understands the broader architecture of your project, ensuring the code it generates integrates seamlessly.
+*   **Advanced Debugging**: Feed it an error trace, and Codex can pinpoint the root cause, suggest a fix, and even write the tests to prevent future regressions.
+*   **Legacy Code Refactoring**: It can analyze outdated codebases and automatically refactor them to modern standards, improving performance and maintainability.
 
 ### Multimodal Mastery
 
