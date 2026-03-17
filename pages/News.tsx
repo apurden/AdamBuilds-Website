@@ -31,10 +31,9 @@ const News: React.FC = () => {
       <div className="max-w-5xl mx-auto">
         <FadeIn direction="down">
           <div className="mb-12 border-b border-white/10 pb-8">
-              <h1 className="text-4xl font-bold mb-4">Latest <span className="text-brand-accent">Insights</span></h1>
-              <p className="text-slate-400 mb-8">Thoughts on the rapidly evolving landscape of artificial intelligence.</p>
+              <h1 className="text-4xl font-bold mb-4 text-white">Latest <span className="text-[#a855f7]">AI</span> News</h1>
               
-              <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+              <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between mt-8">
                 {/* Search Bar */}
                 <div className="relative w-full md:w-96 group">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-brand-cta transition-colors" size={18} />
