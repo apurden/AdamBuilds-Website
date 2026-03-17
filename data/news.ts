@@ -9,10 +9,11 @@ export const newsData: NewsItem[] = [
     excerpt: "Rain has unveiled the world's first 24/7 autonomous AI agent capable of executing financial transactions and renegotiating bills to optimize personal cash flow.",
     readTime: '6 min read',
     imageUrl: '/rain-financial.png',
+    imageScale: 'scale-150',
     content: `Rain has launched its AI Financial Health Agent, marking the first time a non-human entity has been granted the autonomy to manage personal cash flow and execute complex financial maneuvers without constant human oversight. 
 
 Published: March 17, 2026 | 06:55 AM PST
-By Adam Purden
+By Adam Vincent
 
 ## Beyond Advice: The Rise of Autonomous Execution
 
