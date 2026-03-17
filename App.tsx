@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -31,7 +31,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/news" element={<News />} />
-            <Route path="/news/:id" element={<Article />} />
+            <Route path="/news/:slug" element={<Article />} />
             <Route path="/glossary" element={<Glossary />} />
             <Route path="/about" element={<About />} />
           </Routes>

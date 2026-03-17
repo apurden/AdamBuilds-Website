@@ -3,9 +3,11 @@ import { NewsItem } from '../types';
 export const newsData: NewsItem[] = [
   {
     id: '8',
+    slug: 'rain-financial-agent-launch',
     title: "Rain Launches World's First Autonomous AI Financial Health Agent",
     date: 'Mar 17, 2026',
     category: 'Breaking News',
+    tags: ['AI Agents', 'Fintech', 'Automation'],
     excerpt: "Rain has unveiled the world's first 24/7 autonomous AI agent capable of executing financial transactions and renegotiating bills to optimize personal cash flow.",
     readTime: '6 min read',
     imageUrl: '/rain-financial.png',
@@ -36,9 +38,11 @@ Analysts suggest that this could be the "Amazon moment" for financial advising. 
   },
   {
     id: '7',
+    slug: 'nvidia-gtc-2026-summary',
     title: 'NVIDIA GTC 2026: Jensen Huang Unveils $4 Trillion AI Economy',
     date: 'Mar 16, 2026',
     category: 'Industry News',
+    tags: ['NVIDIA', 'GTC', 'AI Economy', 'Hardware'],
     excerpt: 'NVIDIA CEO Jensen Huang outlines a massive expansion of the AI economy, projecting data center spending to hit $4 trillion by 2030.',
     readTime: '8 min read',
     imageUrl: '/gtc-2026.png',
@@ -70,9 +74,11 @@ Stay tuned for more updates as we dive deeper into the technical specifications 
   },
   {
     id: '5',
+    slug: 'chatgpt-5-4-codex-release',
     title: 'ChatGPT 5.4 and 5.4 Codex: A Leap in Capabilities',
     date: 'Mar 14, 2026',
     category: 'Product Update',
+    tags: ['OpenAI', 'ChatGPT', 'Codex', 'LLM'],
     excerpt: 'OpenAI has unveiled ChatGPT 5.4 and the new 5.4 Codex, bringing unprecedented reasoning, coding capabilities, and multimodal understanding to developers and users alike.',
     readTime: '7 min read',
     imageUrl: 'https://unsplash.com/photos/fvxNerA8uk0/download?force=true',
@@ -100,9 +106,11 @@ With the release of ChatGPT 5.4 and 5.4 Codex, OpenAI has once again raised the 
   },
   {
     id: '6',
+    slug: 'google-antigravity-agentic-ai',
     title: 'Google Antigravity: Navigating the Future of Agentic AI',
     date: 'Mar 14, 2026',
     category: 'Feature Release',
+    tags: ['Google', 'Antigravity', 'Agentic AI', 'Developer Tools'],
     excerpt: 'Google unveils its groundbreaking Antigravity AI capabilities, fundamentally changing the agentic workflow landscape.',
     readTime: '6 min read',
     imageUrl: '/antigravity-logo.png',

@@ -9,9 +9,11 @@ export interface Tool {
 
 export interface NewsItem {
   id: string;
+  slug: string;
   title: string;
   date: string;
   category: string;
+  tags: string[];
   excerpt: string;
   readTime: string;
   imageUrl?: string;

@@ -6,8 +6,8 @@ import FadeIn from '../components/FadeIn';
 import Markdown from 'react-markdown';
 
 const Article: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
-  const articleIndex = newsData.findIndex(item => item.id === id);
+  const { slug } = useParams<{ slug: string }>();
+  const articleIndex = newsData.findIndex(item => item.slug === slug);
   const article = newsData[articleIndex];
 
   if (!article) {
@@ -67,7 +67,7 @@ const Article: React.FC = () => {
           <FadeIn delay={400}>
             <div className="mt-20 pt-10 border-t border-white/10">
               <h3 className="text-2xl font-bold mb-6 text-white text-center">Read Next</h3>
-              <Link to={`/news/${nextArticle.id}`} className="block group">
+              <Link to={`/news/${nextArticle.slug}`} className="block group">
                 <div className="relative overflow-hidden rounded-2xl bg-slate-800 aspect-[21/9] flex items-center justify-center p-8">
                   {nextArticle.imageUrl && (
                     <img 
