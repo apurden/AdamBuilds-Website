@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
 import Home from './pages/Home';
 import Tools from './pages/Tools';
 import News from './pages/News';
@@ -9,36 +8,18 @@ import Glossary from './pages/Glossary';
 import About from './pages/About';
 import Article from './pages/Article';
 
-// Scroll to top on route change
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-};
-
 const App: React.FC = () => {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen font-sans text-white bg-[#0f0c29] selection:bg-brand-accent selection:text-white">
-        <ScrollToTop />
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/tools" element={<Tools />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/news/:slug" element={<Article />} />
-            <Route path="/glossary" element={<Glossary />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/tools" element={<Tools />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/news/:slug" element={<Article />} />
+        <Route path="/glossary" element={<Glossary />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Layout>
   );
 };
 

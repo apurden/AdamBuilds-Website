@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import useMagnetic from '../hooks/useMagnetic';
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -8,6 +9,7 @@ function cn(...inputs: ClassValue[]) {
 
 const NewsletterForm: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const buttonRef = useMagnetic<HTMLButtonElement>(0.2);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -68,6 +70,7 @@ const NewsletterForm: React.FC = () => {
       <input type="hidden" name="id" value="9057261" />
 
       <button 
+        ref={buttonRef}
         type="submit"
         disabled={status === 'loading'}
         className="btn-magnetic group relative px-8 py-4 bg-brand-cta text-brand-dark font-bold rounded-full overflow-hidden min-w-[140px]"

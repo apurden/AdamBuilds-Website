@@ -32,6 +32,22 @@
               'hero-gradient': 'linear-gradient(to right, #0f0c29, #302b63, #24243e)',
               'card-gradient': 'linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)',
               'text-gradient': 'linear-gradient(to right, #a855f7, #2dd4bf)', 
+              'glass-gradient': 'linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%)',
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'gradient-shift': 'gradient-shift 8s ease infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              'gradient-shift': {
+                '0%, 100%': { 'background-position': '0% 50%' },
+                '50%': { 'background-position': '100% 50%' },
+              }
             }
           }
         }
@@ -41,11 +57,51 @@
       body {
         background-color: #0f0c29;
         color: white;
+        overflow-x: hidden;
       }
       ::-webkit-scrollbar { width: 8px; }
       ::-webkit-scrollbar-track { background: #0f0c29; }
       ::-webkit-scrollbar-thumb { background: #302b63; border-radius: 4px; }
       ::-webkit-scrollbar-thumb:hover { background: #a855f7; }
+
+      .glass-premium {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      }
+
+      .glass-card-hover:hover {
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(168, 85, 247, 0.15);
+        transform: translateY(-4px);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .text-gradient-animate {
+        background-size: 200% 200%;
+        animation: gradient-shift 5s ease infinite;
+      }
+
+      .glow-on-hover {
+        position: relative;
+      }
+      .glow-on-hover::after {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background: linear-gradient(45deg, #a855f7, #2dd4bf);
+        z-index: -1;
+        filter: blur(15px);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: inherit;
+      }
+      .glow-on-hover:hover::after {
+        opacity: 0.5;
+      }
     </style>
     <script type="importmap">
 {
