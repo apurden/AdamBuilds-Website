@@ -5,6 +5,14 @@ import FadeIn from '../components/FadeIn';
 import { newsData } from '../data/news';
 import { calculateReadTime } from '../utils/readingTime';
 
+// Helper to get URL components from date
+const getUrlPath = (dateStr: string, slug: string) => {
+  const date = new Date(dateStr);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  return `/news/${year}/${month}/${slug}`;
+};
+
 const News: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -89,7 +97,7 @@ const News: React.FC = () => {
                                   </span>
                                 ))}
                             </div>
-                            <Link to={`/news/${item.slug}`}>
+                            <Link to={getUrlPath(item.date, item.slug)}>
                                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 hover:text-brand-accent transition-colors cursor-pointer">
                                     {item.title}
                                 </h2>
@@ -101,7 +109,7 @@ const News: React.FC = () => {
                                 <span className="flex items-center gap-1.5"><User size={14} className="text-brand-cta" /> {item.author}</span>
                                 <span className="flex items-center gap-1.5"><Calendar size={14} className="text-brand-cta" /> {item.date}</span>
                                 <span className="flex items-center gap-1.5"><Clock size={14} className="text-brand-cta" /> {calculateReadTime(item.content || item.excerpt)}</span>
-                                <Link to={`/news/${item.slug}`} className="flex items-center gap-1 text-white hover:text-brand-accent transition-colors ml-auto">
+                                <Link to={getUrlPath(item.date, item.slug)} className="flex items-center gap-1 text-white hover:text-brand-accent transition-colors ml-auto">
                                     Read Article <ChevronRight size={14} />
                                 </Link>
                             </div>

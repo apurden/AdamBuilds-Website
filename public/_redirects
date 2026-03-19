@@ -1,4 +1,2 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Redirects from old flat URLs to new hierarchical URLs
+/news/:slug  /news/2026/03/:slug  301

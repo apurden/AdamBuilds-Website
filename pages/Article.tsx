@@ -8,7 +8,8 @@ import ArticleMetadata from '../components/ArticleMetadata';
 import { calculateReadTime } from '../utils/readingTime';
 
 const Article: React.FC = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { year, month, slug } = useParams<{ year: string; month: string; slug: string }>();
+  // We can still find by slug as slugs are unique, but we could also verify year/month
   const articleIndex = newsData.findIndex(item => item.slug === slug);
   const article = newsData[articleIndex];
 
@@ -18,6 +19,14 @@ const Article: React.FC = () => {
 
   // Get the next article, looping back to the first if at the end
   const nextArticle = newsData[(articleIndex + 1) % newsData.length];
+
+  // Helper to get URL components from date
+  const getUrlPath = (dateStr: string, slug: string) => {
+    const date = new Date(dateStr);
+    const yearStr = date.getFullYear();
+    const monthStr = String(date.getMonth() + 1).padStart(2, '0');
+    return `/news/${yearStr}/${monthStr}/${slug}`;
+  };
 
   return (
     <div className="min-h-screen pt-24 px-6 pb-20">
@@ -71,7 +80,7 @@ const Article: React.FC = () => {
           <FadeIn delay={400}>
             <div className="mt-20 pt-10 border-t border-white/10">
               <h3 className="text-2xl font-bold mb-6 text-white text-center">Read Next</h3>
-              <Link to={`/news/${nextArticle.slug}`} className="block group">
+              <Link to={getUrlPath(nextArticle.date, nextArticle.slug)} className="block group">
                 <div className="relative overflow-hidden rounded-2xl bg-slate-800 aspect-[21/9] flex items-center justify-center p-8">
                   {nextArticle.imageUrl && (
                     <img 
