@@ -12,10 +12,12 @@ export interface NewsItem {
   slug: string;
   title: string;
   date: string;
+  time: string;
+  author: string;
   category: string;
   tags: string[];
   excerpt: string;
-  readTime: string;
+  readTime?: string;
   imageUrl?: string;
   imageScale?: string;
   content?: string;

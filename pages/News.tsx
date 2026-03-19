@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { Calendar, Clock, ChevronRight, Search, Tag } from 'lucide-react';
+import { Calendar, Clock, ChevronRight, Search, Tag, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
 import { newsData } from '../data/news';
+import { calculateReadTime } from '../utils/readingTime';
 
 const News: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -96,10 +97,11 @@ const News: React.FC = () => {
                             <p className="text-slate-400 mb-4 line-clamp-2 leading-relaxed">
                                 {item.excerpt}
                             </p>
-                            <div className="flex items-center gap-6 text-sm text-slate-500">
-                                <span className="flex items-center gap-1"><Calendar size={14} /> {item.date}</span>
-                                <span className="flex items-center gap-1"><Clock size={14} /> {item.readTime}</span>
-                                <Link to={`/news/${item.slug}`} className="flex items-center gap-1 text-white hover:underline cursor-pointer ml-auto">
+                            <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-sm text-slate-500">
+                                <span className="flex items-center gap-1.5"><User size={14} className="text-brand-cta" /> {item.author}</span>
+                                <span className="flex items-center gap-1.5"><Calendar size={14} className="text-brand-cta" /> {item.date}</span>
+                                <span className="flex items-center gap-1.5"><Clock size={14} className="text-brand-cta" /> {calculateReadTime(item.content || item.excerpt)}</span>
+                                <Link to={`/news/${item.slug}`} className="flex items-center gap-1 text-white hover:text-brand-accent transition-colors ml-auto">
                                     Read Article <ChevronRight size={14} />
                                 </Link>
                             </div>

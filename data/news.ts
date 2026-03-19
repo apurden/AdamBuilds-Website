@@ -6,16 +6,14 @@ export const newsData: NewsItem[] = [
     slug: 'rain-financial-agent-launch',
     title: "Rain Launches World's First Autonomous AI Financial Health Agent",
     date: 'Mar 17, 2026',
+    time: '06:55 AM PST',
+    author: 'Adam Vincent',
     category: 'Breaking News',
     tags: ['AI Agents', 'Fintech', 'Automation'],
     excerpt: "Rain has unveiled the world's first 24/7 autonomous AI agent capable of executing financial transactions and renegotiating bills to optimize personal cash flow.",
-    readTime: '6 min read',
     imageUrl: '/rain-financial.png',
     imageScale: 'scale-150',
     content: `Rain has launched its AI Financial Health Agent, marking the first time a non-human entity has been granted the autonomy to manage personal cash flow and execute complex financial maneuvers without constant human oversight. 
-
-Published: March 17, 2026 | 06:55 AM PST
-By Adam Vincent
 
 ## Beyond Advice: The Rise of Autonomous Execution
 
@@ -41,10 +39,11 @@ Analysts suggest that this could be the "Amazon moment" for financial advising. 
     slug: 'nvidia-gtc-2026-summary',
     title: 'NVIDIA GTC 2026: Jensen Huang Unveils $4 Trillion AI Economy',
     date: 'Mar 16, 2026',
+    time: '10:30 AM PST',
+    author: 'Adam Vincent',
     category: 'Industry News',
     tags: ['NVIDIA', 'GTC', 'AI Economy', 'Hardware'],
     excerpt: 'NVIDIA CEO Jensen Huang outlines a massive expansion of the AI economy, projecting data center spending to hit $4 trillion by 2030.',
-    readTime: '8 min read',
     imageUrl: '/gtc-2026.png',
     content: `At the opening keynote of **GTC 2026**, NVIDIA CEO Jensen Huang delivered a visionary roadmap that has sent shockwaves through the tech world. The core message was clear: we are no longer just in an "AI boom"—we are witnessing the birth of a **$4 trillion AI economy**.
 
@@ -77,10 +76,11 @@ Stay tuned for more updates as we dive deeper into the technical specifications 
     slug: 'chatgpt-5-4-codex-release',
     title: 'ChatGPT 5.4 and 5.4 Codex: A Leap in Capabilities',
     date: 'Mar 14, 2026',
+    time: '08:15 AM PST',
+    author: 'Adam Vincent',
     category: 'Product Update',
     tags: ['OpenAI', 'ChatGPT', 'Codex', 'LLM'],
     excerpt: 'OpenAI has unveiled ChatGPT 5.4 and the new 5.4 Codex, bringing unprecedented reasoning, coding capabilities, and multimodal understanding to developers and users alike.',
-    readTime: '7 min read',
     imageUrl: 'https://unsplash.com/photos/fvxNerA8uk0/download?force=true',
     content: `OpenAI has officially unveiled **ChatGPT 5.4** and its developer-focused counterpart, **5.4 Codex**. This release marks a significant milestone in the evolution of large language models, introducing capabilities that bridge the gap between AI assistance and autonomous agency.
 
@@ -109,10 +109,11 @@ With the release of ChatGPT 5.4 and 5.4 Codex, OpenAI has once again raised the 
     slug: 'google-antigravity-agentic-ai',
     title: 'Google Antigravity: Navigating the Future of Agentic AI',
     date: 'Mar 14, 2026',
+    time: '09:00 AM PST',
+    author: 'Adam Vincent',
     category: 'Feature Release',
     tags: ['Google', 'Antigravity', 'Agentic AI', 'Developer Tools'],
     excerpt: 'Google unveils its groundbreaking Antigravity AI capabilities, fundamentally changing the agentic workflow landscape.',
-    readTime: '6 min read',
     imageUrl: '/antigravity-logo.png',
     content: `Google has just expanded its frontiers into specialized, agentic workflows with the introduction of **Google Antigravity**. Designed from the ground up as a sophisticated pair-programming AI and autonomous execution agent, Antigravity stands out as the next evolution of intelligent developer tools.
 

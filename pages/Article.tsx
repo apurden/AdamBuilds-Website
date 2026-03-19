@@ -1,9 +1,11 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { newsData } from '../data/news';
 import FadeIn from '../components/FadeIn';
 import Markdown from 'react-markdown';
+import ArticleMetadata from '../components/ArticleMetadata';
+import { calculateReadTime } from '../utils/readingTime';
 
 const Article: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -32,10 +34,12 @@ const Article: React.FC = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">{article.title}</h1>
             
-            <div className="flex items-center gap-6 text-sm text-slate-400 border-b border-white/10 pb-8">
-              <span className="flex items-center gap-2"><Calendar size={16} /> {article.date}</span>
-              <span className="flex items-center gap-2"><Clock size={16} /> {article.readTime}</span>
-            </div>
+            <ArticleMetadata 
+              author={article.author}
+              date={article.date}
+              time={article.time}
+              readTime={calculateReadTime(article.content || article.excerpt)}
+            />
           </div>
         </FadeIn>
 
