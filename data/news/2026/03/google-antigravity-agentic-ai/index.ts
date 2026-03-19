@@ -12,6 +12,7 @@ export const article: NewsItem = {
   tags: ['Google', 'Antigravity', 'Agentic AI', 'Developer Tools'],
   excerpt: 'Google unveils its groundbreaking Antigravity AI capabilities, fundamentally changing the agentic workflow landscape.',
   imageUrl: logo,
+  imageScale: 'scale-100',
   content: `Google has just expanded its frontiers into specialized, agentic workflows with the introduction of **Google Antigravity**. Designed from the ground up as a sophisticated pair-programming AI and autonomous execution agent, Antigravity stands out as the next evolution of intelligent developer tools.
 
 ### What is Google Antigravity?

@@ -12,6 +12,7 @@ export const article: NewsItem = {
   tags: ['AI Coding', 'Open Source', 'GStack', 'Developer Tools'],
   excerpt: "GStack emerges as a powerful open-source toolkit designed to transform AI code generation from 'prompt-and-pray' into a rigorous, repeatable engineering discipline.",
   imageUrl: hero,
+  imageScale: 'scale-100',
   content: `## The Shift from Chat to Code Engineering
 
 GStack has emerged as a landmark open-source toolkit designed to bridge the gap between "prompt-based" curiosity and "production-grade" engineering in the AI era. While tools like GitHub Copilot and Cursor have made AI coding accessible, they often suffer from non-deterministic outputs that require heavy manual cleanup. GStack solves this by introducing structured, repeatable patterns—much like a traditional software stack—into the generative workflow.
