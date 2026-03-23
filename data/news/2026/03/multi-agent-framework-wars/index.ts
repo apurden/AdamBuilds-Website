@@ -33,7 +33,7 @@ Originating from the LangChain ecosystem, **LangGraph** has become the gold stan
 Originally developed by Microsoft Research and now evolved into the **AG2** ecosystem, this framework excels at "conversation patterns." It allows for hundreds of agents to hold structured dialogues to solve problems. It remains the most flexible choice for decentralized, autonomous problem-solving where you want the agents to figure out the best path forward amongst themselves.
 
 ### 4. OpenAI Agents SDK: The "Frontier First" Choice
-By leveraging the native capabilities of GPT-5.4 and GPT-6, the **OpenAI Agents SDK** provides the tightest integration with the world's most powerful frontier models. It is built for speed and utilizes internal "Thinking" layers of the latest models to perform agentic orchestration with minimal latencies, making it the choice for real-time applications.
+By leveraging the native capabilities of **GPT-5.4** and preparing for the **upcoming GPT-6**, the OpenAI Agents SDK provides the tightest integration with the world's most powerful frontier models. It is built for speed and utilizes internal "Thinking" layers of the GPT-5.4 Pro model to perform agentic orchestration with minimal latencies, making it the choice for real-time applications.
 
 ### 5. Google ADK (Agent Development Kit): Scale and Security
 For the enterprise, Google's **ADK** provides a massive-scale, managed environment that integrates directly with Vertex AI and Google Cloud's security protocols. It is designed for companies that need thousands of agents working across global datasets with strict data governance, offering "Plug and Play" reliability that others struggle to match at scale.
