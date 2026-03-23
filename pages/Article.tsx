@@ -52,7 +52,7 @@ const Article: React.FC = () => {
           </div>
         </FadeIn>
 
-        <FadeIn delay={200}>
+        <div className="mt-8">
           {article.imageUrl && (
             <div className="w-full aspect-video rounded-xl overflow-hidden bg-slate-800 mb-10">
               <img 
@@ -73,7 +73,7 @@ const Article: React.FC = () => {
               <p>{article.excerpt}</p>
             )}
           </div>
-        </FadeIn>
+        </div>
 
         {/* Read Next Section */}
         {nextArticle && (
