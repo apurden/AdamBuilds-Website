@@ -29,7 +29,7 @@ const Article: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 px-6 pb-20">
+    <div className="min-h-screen pt-4 px-6 pb-20">
       <div className="max-w-3xl mx-auto">
         <FadeIn direction="down">
           <Link to="/news" className="inline-flex items-center gap-2 text-brand-cta hover:text-brand-accent transition-colors mb-8">

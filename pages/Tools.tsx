@@ -17,7 +17,7 @@ const Tools: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen pt-40 px-6 pb-20">
+    <div className="min-h-screen pt-4 px-6 pb-20">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">

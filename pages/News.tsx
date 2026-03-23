@@ -36,7 +36,7 @@ const News: React.FC = () => {
   }, [searchQuery, selectedCategory]);
 
   return (
-    <div className="min-h-screen pt-24 px-6 pb-20">
+    <div className="min-h-screen pt-4 px-6 pb-20">
       <div className="max-w-5xl mx-auto">
         <FadeIn direction="down">
           <div className="mb-12 border-b border-white/10 pb-8">

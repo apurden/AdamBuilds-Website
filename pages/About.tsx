@@ -7,7 +7,7 @@ const About: React.FC = () => {
     <div className="min-h-screen px-6 pb-20">
       <div className="max-w-5xl mx-auto">
         {/* Profile Header */}
-        <FadeIn className="flex flex-col md:flex-row items-center gap-12 mb-24 pt-20">
+        <FadeIn className="flex flex-col md:flex-row items-center gap-12 mb-24 pt-4">
             <div className="w-56 h-56 md:w-80 md:h-80 shrink-0 flex items-center justify-center p-4 glass-premium rounded-3xl shadow-2xl relative">
                 <div className="absolute inset-0 bg-brand-accent/5 rounded-3xl blur-3xl -z-10 animate-pulse-slow"></div>
                 <img 
