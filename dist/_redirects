@@ -1,4 +1,4 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+/news/:slug  /news/2026/03/:slug  301
+
+# SPA Rewrite: Redirect all other requests to index.html so React Router can handle them
+/*  /index.html  200
