@@ -1,0 +1,204 @@
+<svg viewBox="0 -25 1600 900" xmlns="http://www.w3.org/2000/svg" width="1600" height="900">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0f1923"/>
+      <stop offset="100%" stop-color="#050a0f"/>
+    </radialGradient>
+    <radialGradient id="glowCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E06C4B" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#C0422A" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#E06C4B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="logoGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF8A65"/>
+      <stop offset="100%" stop-color="#D4512F"/>
+    </radialGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="strongGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="subtleGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="dotGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="#1e3a52" opacity="0.5"/>
+    </pattern>
+    <clipPath id="screenClip">
+      <rect x="320" y="120" width="960" height="600" rx="6"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bgGrad)"/>
+  <rect width="1600" height="900" fill="url(#dotGrid)"/>
+
+  <!-- Ambient glow behind screen -->
+  <ellipse cx="800" cy="430" rx="560" ry="380" fill="url(#glowCenter)"/>
+
+  <!-- Mac window shadow -->
+  <rect x="310" y="112" width="980" height="618" rx="10" fill="#000000" opacity="0.6"/>
+
+  <!-- Mac window outer frame -->
+  <rect x="316" y="118" width="968" height="606" rx="8" fill="#1a2633" stroke="#2a4060" stroke-width="1.5"/>
+
+  <!-- Mac title bar -->
+  <rect x="316" y="118" width="968" height="40" rx="8" fill="#1e2d3d"/>
+  <rect x="316" y="138" width="968" height="20" fill="#1e2d3d"/>
+
+  <!-- Traffic light buttons -->
+  <circle cx="352" cy="138" r="7" fill="#FF5F57"/>
+  <circle cx="376" cy="138" r="7" fill="#FEBC2E"/>
+  <circle cx="400" cy="138" r="7" fill="#28C840"/>
+
+  <!-- Window title -->
+  <text x="800" y="144" font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#8ba8c4" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.5">Claude — Computer Use</text>
+
+  <!-- Screen content area -->
+  <rect x="316" y="158" width="968" height="566" fill="#0a1420"/>
+
+  <!-- Screen inner glow from logo -->
+  <ellipse cx="800" cy="440" rx="300" ry="260" fill="#E06C4B" opacity="0.06"/>
+
+  <!-- Subtle horizontal scan lines effect -->
+  <rect x="316" y="158" width="968" height="566" fill="url(#dotGrid)" opacity="0.3" clip-path="url(#screenClip)"/>
+
+  <!-- Mac desktop wallpaper elements (subtle) -->
+  <rect x="316" y="158" width="968" height="566" fill="none" clip-path="url(#screenClip)"/>
+
+  <!-- Fake desktop elements top bar -->
+  <rect x="316" y="158" width="968" height="26" fill="#12202e" opacity="0.9"/>
+  <circle cx="334" cy="171" r="4" fill="#3a5a7a" opacity="0.7"/>
+  <rect x="345" y="166" width="60" height="10" rx="3" fill="#2a4060" opacity="0.5"/>
+  <rect x="1220" y="166" width="50" height="10" rx="3" fill="#2a4060" opacity="0.5"/>
+  <rect x="1278" y="166" width="30" height="10" rx="3" fill="#2a4060" opacity="0.5"/>
+
+  <!-- Anthropic "A" logo mark — centered and glowing -->
+  <!-- The Anthropic mark is a distinctive angular diamond/star shape -->
+  <!-- Building it as a 8-pointed angular star / stylized A -->
+
+  <!-- Outer glow ring (very soft) -->
+  <circle cx="800" cy="430" r="135" fill="none" stroke="#E06C4B" stroke-width="1" opacity="0.15" filter="url(#strongGlow)"/>
+  <circle cx="800" cy="430" r="110" fill="none" stroke="#E06C4B" stroke-width="1.5" opacity="0.25" filter="url(#softGlow)"/>
+
+  <!-- Logo glow blob -->
+  <ellipse cx="800" cy="430" rx="90" ry="90" fill="#E06C4B" opacity="0.12" filter="url(#strongGlow)"/>
+
+  <!-- Anthropic Diamond Mark — angular 8-segment star -->
+  <!-- This builds the characteristic Anthropic starburst/diamond logo -->
+  <g transform="translate(800, 430)" filter="url(#softGlow)">
+    <!-- The Anthropic mark: 8 angular wedge segments forming a star -->
+    <!-- Each segment is a thin elongated diamond pointing outward -->
+    <polygon points="0,-72 10,-22 0,-10 -10,-22" fill="#FF8A65" opacity="0.95"/>
+    <polygon points="51,-51 15,-8 10,-22 22,-22" fill="#F07050" opacity="0.9"/>
+    <polygon points="72,0 22,-10 10,0 22,10" fill="#E06C4B" opacity="0.95"/>
+    <polygon points="51,51 22,22 10,22 8,15" fill="#F07050" opacity="0.9"/>
+    <polygon points="0,72 10,22 0,10 -10,22" fill="#FF8A65" opacity="0.95"/>
+    <polygon points="-51,51 -8,15 -10,22 -22,22" fill="#F07050" opacity="0.9"/>
+    <polygon points="-72,0 -22,10 -10,0 -22,-10" fill="#E06C4B" opacity="0.95"/>
+    <polygon points="-51,-51 -22,-22 -10,-22 -15,-8" fill="#F07050" opacity="0.9"/>
+    <!-- Inner core -->
+    <circle cx="0" cy="0" r="12" fill="#FF9575" opacity="0.98"/>
+    <circle cx="0" cy="0" r="6" fill="#FFCBB8" opacity="1"/>
+  </g>
+
+  <!-- Orbit ring around logo -->
+  <circle cx="800" cy="430" r="100" fill="none" stroke="#E06C4B" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.3"/>
+
+  <!-- Radiating interaction indicators — simulating Claude clicking/acting -->
+  <!-- Click ripple 1: top-left area (simulating clicking a menu) -->
+  <g transform="translate(490, 270)" filter="url(#subtleGlow)">
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#E06C4B" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#FF8A65" stroke-width="1" opacity="0.5"/>
+    <circle cx="0" cy="0" r="3" fill="#FF8A65" opacity="0.9"/>
+  </g>
+  <!-- Fake menu item highlighted -->
+  <rect x="450" y="230" width="140" height="24" rx="4" fill="#E06C4B" opacity="0.15" stroke="#E06C4B" stroke-width="0.8" stroke-opacity="0.4"/>
+  <rect x="460" y="237" width="80" height="9" rx="2" fill="#8ba8c4" opacity="0.4"/>
+
+  <!-- Click ripple 2: right area (simulating typing in a text field) -->
+  <g transform="translate(1080, 380)" filter="url(#subtleGlow)">
+    <circle cx="0" cy="0" r="18" fill="none" stroke="#E06C4B" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#FF8A65" stroke-width="1" opacity="0.4"/>
+    <circle cx="0" cy="0" r="3" fill="#FF8A65" opacity="0.85"/>
+  </g>
+  <!-- Fake text field -->
+  <rect x="970" y="340" width="220" height="34" rx="5" fill="#0e1e2e" stroke="#E06C4B" stroke-width="1" stroke-opacity="0.5"/>
+  <rect x="982" y="351" width="120" height="10" rx="2" fill="#3a6a8a" opacity="0.6"/>
+  <!-- Cursor blink -->
+  <rect x="1106" y="349" width="2" height="14" rx="1" fill="#FF8A65" opacity="0.9"/>
+
+  <!-- Click ripple 3: bottom area (simulating clicking a button) -->
+  <g transform="translate(650, 600)" filter="url(#subtleGlow)">
+    <circle cx="0" cy="0" r="16" fill="none" stroke="#E06C4B" stroke-width="1.5" opacity="0.65"/>
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#FF8A65" stroke-width="1" opacity="0.45"/>
+    <circle cx="0" cy="0" r="3" fill="#FF8A65" opacity="0.8"/>
+  </g>
+  <!-- Fake button -->
+  <rect x="600" y="580" width="100" height="32" rx="16" fill="#E06C4B" opacity="0.85"/>
+  <rect x="612" y="592" width="76" height="9" rx="2" fill="#fff" opacity="0.85"/>
+
+  <!-- Connecting dashed lines from logo to interaction points -->
+  <line x1="800" y1="430" x2="490" y2="270" stroke="#E06C4B" stroke-width="0.8" stroke-dasharray="5 7" opacity="0.25"/>
+  <line x1="800" y1="430" x2="1080" y2="380" stroke="#E06C4B" stroke-width="0.8" stroke-dasharray="5 7" opacity="0.25"/>
+  <line x1="800" y1="430" x2="650" y2="600" stroke="#E06C4B" stroke-width="0.8" stroke-dasharray="5 7" opacity="0.25"/>
+
+  <!-- Fake app windows in background (blurred/behind) -->
+  <!-- Left panel: simulated code editor -->
+  <rect x="326" y="186" width="260" height="520" rx="4" fill="#0d1a26" stroke="#1e3a52" stroke-width="1" opacity="0.7"/>
+  <rect x="326" y="186" width="260" height="28" rx="4" fill="#12212f" opacity="0.9"/>
+  <rect x="326" y="206" width="260" height="8" fill="#12212f"/>
+  <text x="456" y="205" font-family="monospace" font-size="11" fill="#4a7a9a" text-anchor="middle">script.py</text>
+  <!-- Code lines -->
+  <rect x="340" y="228" width="90" height="7" rx="2" fill="#2a4a6a" opacity="0.5"/>
+  <rect x="340" y="244" width="130" height="7" rx="2" fill="#1e6a3a" opacity="0.5"/>
+  <rect x="340" y="260" width="70" height="7" rx="2" fill="#4a6a2a" opacity="0.5"/>
+  <rect x="340" y="276" width="110" height="7" rx="2" fill="#2a4a6a" opacity="0.5"/>
+  <rect x="340" y="292" width="140" height="7" rx="2" fill="#6a2a2a" opacity="0.5"/>
+  <rect x="340" y="308" width="80" height="7" rx="2" fill="#2a4a6a" opacity="0.5"/>
+  <rect x="340" y="324" width="120" height="7" rx="2" fill="#1e6a3a" opacity="0.5"/>
+  <rect x="340" y="340" width="60" height="7" rx="2" fill="#4a6a2a" opacity="0.5"/>
+  <rect x="340" y="356" width="150" height="7" rx="2" fill="#2a4a6a" opacity="0.5"/>
+  <!-- Active line highlight -->
+  <rect x="326" y="368" width="260" height="18" fill="#E06C4B" opacity="0.12"/>
+  <rect x="340" y="372" width="100" height="7" rx="2" fill="#E06C4B" opacity="0.6"/>
+
+  <!-- Right panel: terminal -->
+  <rect x="980" y="210" width="290" height="300" rx="4" fill="#090f18" stroke="#1e3a52" stroke-width="1" opacity="0.7"/>
+  <rect x="980" y="210" width="290" height="28" rx="4" fill="#0d1620"/>
+  <rect x="980" y="228" width="290" height="10" fill="#0d1620"/>
+  <circle cx="998" cy="224" r="4" fill="#FF5F57" opacity="0.7"/>
+  <circle cx="1014" cy="224" r="4" fill="#FEBC2E" opacity="0.7"/>
+  <circle cx="1030" cy="224" r="4" fill="#28C840" opacity="0.7"/>
+  <!-- Terminal text -->
+  <text x="993" y="260" font-family="'SF Mono', 'Fira Code', monospace" font-size="10" fill="#4CAF50" opacity="0.8">$ python automate.py</text>
+  <text x="993" y="278" font-family="'SF Mono', 'Fira Code', monospace" font-size="10" fill="#8ba8c4" opacity="0.7">→ Claude: taking screenshot...</text>
+  <text x="993" y="296" font-family="'SF Mono', 'Fira Code', monospace" font-size="10" fill="#8ba8c4" opacity="0.7">→ Claude: clicking button at (650, 320)</text>
+  <text x="993" y="314" font-family="'SF Mono', 'Fira Code', monospace" font-size="10" fill="#E06C4B" opacity="0.85">→ Claude: task complete ✓</text>
+  <text x="993" y="334" font-family="'SF Mono', 'Fira Code', monospace" font-size="10" fill="#4CAF50" opacity="0.7">$ <tspan fill="#FF8A65" opacity="0.9">█</tspan></text>
+
+  <!-- Main title text overlay at bottom of screen -->
+  <rect x="316" y="660" width="968" height="64" fill="url(#bgGrad)" opacity="0.92"/>
+  <rect x="316" y="658" width="968" height="2" fill="#E06C4B" opacity="0.5"/>
+
+  <text x="800" y="683" font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="3" opacity="0.95">CLAUDE COMPUTER USE</text>
+  <text x="800" y="706" font-family="'SF Pro Text', -apple-system, sans-serif" font-size="12" fill="#8ba8c4" text-anchor="middle" letter-spacing="2" opacity="0.75">ANTHROPIC  ·  RESEARCH PREVIEW  ·  MAC</text>
+
+  <!-- Mac Dock (bottom) -->
+  <rect x="316" y="720" width="968" height="4" fill="#0a1420"/>
+
+  <!-- Bottom bar outside window - branding strip -->
+  <rect x="0" y="840" width="1600" height="60" fill="#050a0f" opacity="0.8"/>
+  <text x="800" y="878" font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#E06C4B" text-anchor="middle" letter-spacing="4" opacity="0.7">ADAMBUILDS.IO</text>
+
+  <!-- Subtle vignette overlay -->
+  <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+    <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+</svg>
