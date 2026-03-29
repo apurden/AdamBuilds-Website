@@ -84,9 +84,9 @@ const Home: React.FC = () => {
             <FadeIn direction="right" className="relative group">
               <div className="aspect-square relative glass-premium rounded-3xl p-8 group-hover:shadow-[0_0_50px_rgba(45,212,191,0.15)] transition-all duration-700">
                  <img 
-                    src="https://github.com/apurden/AdamBuilds-Website/releases/download/v1.0-assets/adam.png" 
+                    src="/adam-profile.jpg" 
                     alt="Adam Builds Profile" 
-                    className="w-full h-full object-contain drop-shadow-2xl animate-float"
+                    className="w-full h-full object-cover rounded-2xl drop-shadow-2xl animate-float"
                  />
               </div>
             </FadeIn>

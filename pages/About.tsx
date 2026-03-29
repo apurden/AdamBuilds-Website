@@ -11,9 +11,9 @@ const About: React.FC = () => {
             <div className="w-56 h-56 md:w-80 md:h-80 shrink-0 flex items-center justify-center p-4 glass-premium rounded-3xl shadow-2xl relative">
                 <div className="absolute inset-0 bg-brand-accent/5 rounded-3xl blur-3xl -z-10 animate-pulse-slow"></div>
                 <img 
-                    src="https://github.com/apurden/AdamBuilds-Website/releases/download/v1.0-assets/adam.png" 
+                    src="/adam-profile.jpg" 
                     alt="Adam Profile" 
-                    className="w-full h-full object-contain animate-float"
+                    className="w-full h-full object-cover rounded-2xl animate-float"
                 />
             </div>
             <div className="text-center md:text-left">
