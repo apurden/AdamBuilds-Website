@@ -15,7 +15,7 @@ const Home: React.FC = () => {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-      }, 100); 
+      }, 100);
       return () => clearTimeout(timer);
     }
   }, [location]);
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-cta/10 rounded-full blur-[120px] -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          
+
           <FadeIn delay={100}>
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-500 pb-2">
               Build Real Software.<br />
@@ -37,34 +37,34 @@ const Home: React.FC = () => {
 
           <FadeIn delay={200}>
             <div className="w-full max-w-3xl mx-auto mb-16 rounded-3xl overflow-hidden glass-premium shadow-[0_0_100px_rgba(168,85,247,0.1)] border border-white/10 p-1 md:p-2">
-               <div className="aspect-video relative rounded-2xl overflow-hidden">
-                  <iframe 
-                    className="absolute top-0 left-0 w-full h-full"
-                    src="https://www.youtube.com/embed/Tyd24xC26ro?rel=0&modestbranding=1" 
-                    title="AdamBuilds Intro Video"
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowFullScreen
-                  ></iframe>
-               </div>
+              <div className="aspect-video relative rounded-2xl overflow-hidden">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/Tyd24xC26ro?rel=0&modestbranding=1"
+                  title="AdamBuilds Intro Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </FadeIn>
 
           <FadeIn delay={300}>
             <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-               Exploring the intersection of AI tools, workflow automation, and vibe coding. Join me as I learn to build without writing a single line of code.
+              Exploring the intersection of AI tools, workflow automation, and vibe coding. Join me as I learn to build without writing a single line of code.
             </p>
           </FadeIn>
 
           <FadeIn delay={400}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <NavLink 
-                to="/tools" 
+              <NavLink
+                to="/tools"
                 className="w-full sm:w-auto px-10 py-5 bg-white text-black font-bold rounded-2xl hover:bg-slate-200 transition-all flex items-center justify-center gap-2 group shadow-xl hover:shadow-white/10"
               >
                 Explore Tools <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </NavLink>
-              <a 
+              <a
                 href="https://www.youtube.com/@AdamVincentBuilds"
                 target="_blank"
                 rel="noreferrer"
@@ -83,11 +83,11 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <FadeIn direction="right" className="relative group">
               <div className="aspect-square relative glass-premium rounded-3xl p-8 group-hover:shadow-[0_0_50px_rgba(45,212,191,0.15)] transition-all duration-700">
-                 <img 
-                    src="/adam-profile.jpg" 
-                    alt="Adam Builds Profile" 
-                    className="w-full h-full object-cover rounded-2xl drop-shadow-2xl animate-float"
-                 />
+                <img
+                  src="https://github.com/apurden/AdamBuilds-Website/releases/download/v1.0-assets/adam.png"
+                  alt="Adam Builds Profile"
+                  className="w-full h-full object-contain drop-shadow-2xl animate-float"
+                />
               </div>
             </FadeIn>
 
@@ -98,7 +98,7 @@ const Home: React.FC = () => {
                   I'm Adam — on a mission to master AI tools and build professional software through vibe coding. Join me as we explore:
                 </p>
               </FadeIn>
-              
+
               <div className="grid gap-6">
                 <FadeIn delay={200} direction="left">
                   <div className="flex items-start gap-5 p-6 glass-premium rounded-2xl glass-card-hover group">
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
                 </FadeIn>
 
                 <FadeIn delay={300} direction="left">
-                   <div className="flex items-start gap-5 p-6 glass-premium rounded-2xl glass-card-hover group">
+                  <div className="flex items-start gap-5 p-6 glass-premium rounded-2xl glass-card-hover group">
                     <div className="p-4 rounded-xl bg-brand-cta/10 text-brand-cta group-hover:scale-110 transition-transform">
                       <Bot size={28} />
                     </div>
@@ -125,7 +125,7 @@ const Home: React.FC = () => {
                 </FadeIn>
 
                 <FadeIn delay={400} direction="left">
-                   <div className="flex items-start gap-5 p-6 glass-premium rounded-2xl glass-card-hover group">
+                  <div className="flex items-start gap-5 p-6 glass-premium rounded-2xl glass-card-hover group">
                     <div className="p-4 rounded-xl bg-brand-purple/20 text-purple-400 group-hover:scale-110 transition-transform">
                       <Zap size={28} />
                     </div>
@@ -140,7 +140,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       <CallToAction />
     </div>
   );
