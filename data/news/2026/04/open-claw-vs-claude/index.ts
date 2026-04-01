@@ -37,13 +37,16 @@ While Claude is less "customizable" than OpenClaw, its safety-first architecture
 
 ## Feature Face-Off: Side-by-Side
 
-| Feature | OpenClaw | Anthropic Claude |
-| :--- | :--- | :--- |
-| **Philosophy** | Decentralized & Open-Source | Centralized & Safety-First |
-| **Hosting** | Self-hosted (Native hardware) | Managed via Anthropic Cloud |
-| **Extensibility** | Infinite (via ClawHub) | Structured (via App Integration) |
-| **Security** | User-managed (CVE risks) | Anthropic-managed (Sandboxed) |
-| **Remote Control** | Messaging App (WhatsApp/Telegram) | Native "Dispatch" App |
+| Capability | OpenClaw | Anthropic Claude |
+| :--- | :---: | :---: |
+| **Desktop Mouse/Keyboard Control** | ✅ | ✅ |
+| **Native System Execution** | ✅ | ❌ (Sandboxed) |
+| **Remote Task Dispatch** | ✅ (via Message) | ✅ (Native App) |
+| **Self-Hosted Privacy** | ✅ | ❌ |
+| **Zero-Configuration Setup** | ❌ | ✅ |
+| **Community Plugin Support** | ✅ (ClawHub) | ❌ |
+| **Enterprise Safety Guardrails** | ❌ | ✅ |
+| **Open Source Codebase** | ✅ | ❌ |
 
 ## Shared Ground: The Agentic Future
 
