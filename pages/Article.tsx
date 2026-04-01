@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import { newsData } from '../data/news';
 import FadeIn from '../components/FadeIn';
 import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import ArticleMetadata from '../components/ArticleMetadata';
 import { calculateReadTime } from '../utils/readingTime';
 
@@ -67,7 +68,7 @@ const Article: React.FC = () => {
           <div className="prose prose-invert prose-lg max-w-none prose-a:text-brand-cta hover:prose-a:text-brand-accent prose-img:rounded-xl">
             {article.content ? (
               <div className="markdown-body">
-                <Markdown>{article.content}</Markdown>
+                <Markdown remarkPlugins={[remarkGfm]}>{article.content}</Markdown>
               </div>
             ) : (
               <p>{article.excerpt}</p>

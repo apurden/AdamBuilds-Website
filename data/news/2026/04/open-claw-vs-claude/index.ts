@@ -2,7 +2,7 @@ import { NewsItem } from '../../../../../types';
 import hero from './battle-hero.png';
 
 export const article: NewsItem = {
-  id: '14',
+  id: '15',
   slug: 'open-claw-vs-anthropic-claude',
   title: "OpenClaw vs. Claude: The Battle for Your Desktop Control",
   date: 'Apr 1, 2026',
