@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Tools from './pages/Tools';
@@ -10,17 +10,27 @@ import Article from './pages/Article';
 
 const App: React.FC = () => {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/tools" element={<Tools />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/news/:year/:month/:slug" element={<Article />} />
-        <Route path="/glossary" element={<Glossary />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </Layout>
+    <HelmetProvider>
+      <Layout>
+        <Outlet />
+      </Layout>
+    </HelmetProvider>
   );
 };
+
+export const routes = [
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "", element: <Home /> },
+      { path: "tools", element: <Tools /> },
+      { path: "news", element: <News /> },
+      { path: "news/:year/:month/:slug", element: <Article /> },
+      { path: "glossary", element: <Glossary /> },
+      { path: "about", element: <About /> },
+    ]
+  },
+];
 
 export default App;

@@ -4,6 +4,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
 import CallToAction from '../components/CallToAction';
 import useMagnetic from '../hooks/useMagnetic';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -22,6 +23,10 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Home" 
+        description="Build Real Software. No Code Required. Exploring the intersection of AI tools, workflow automation, and vibe coding with Adam Vincent."
+      />
       <section className="relative overflow-hidden pt-20 pb-20 lg:pt-32 lg:pb-32 px-6">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-purple/20 rounded-full blur-[120px] -z-10 animate-pulse-slow"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-cta/10 rounded-full blur-[120px] -z-10"></div>

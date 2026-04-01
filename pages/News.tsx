@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import FadeIn from '../components/FadeIn';
 import { newsData } from '../data/news';
 import { calculateReadTime } from '../utils/readingTime';
+import SEO from '../components/SEO';
 
 // Helper to get URL components from date
 const getUrlPath = (dateStr: string, slug: string) => {
@@ -37,6 +38,10 @@ const News: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-4 px-6 pb-20">
+      <SEO 
+        title="AI News" 
+        description="Stay updated with the latest in frontier models, agentic AI, and industry shifts. Journalistic insights from Adam Vincent."
+      />
       <div className="max-w-5xl mx-auto">
         <FadeIn direction="down">
           <div className="mb-12 border-b border-white/10 pb-8">

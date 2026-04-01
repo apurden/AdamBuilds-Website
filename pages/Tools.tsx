@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ExternalLink, Search } from 'lucide-react';
 import { toolsData } from '../data/tools';
 import FadeIn from '../components/FadeIn';
+import SEO from '../components/SEO';
 
 const Tools: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -18,6 +19,10 @@ const Tools: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-4 px-6 pb-20">
+      <SEO 
+        title="AI Toolbox" 
+        description="A curated list of essential AI tools for coding, writing, image generation, and productivity. Updated for 2026 workflows."
+      />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">

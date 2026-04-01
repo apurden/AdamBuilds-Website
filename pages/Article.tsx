@@ -7,6 +7,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import ArticleMetadata from '../components/ArticleMetadata';
 import { calculateReadTime } from '../utils/readingTime';
+import SEO from '../components/SEO';
 
 const Article: React.FC = () => {
   const { year, month, slug } = useParams<{ year: string; month: string; slug: string }>();
@@ -17,6 +18,19 @@ const Article: React.FC = () => {
   if (!article) {
     return <Navigate to="/news" replace />;
   }
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": article.title,
+    "image": [article.imageUrl],
+    "datePublished": new Date(article.date).toISOString(),
+    "author": [{
+        "@type": "Person",
+        "name": article.author,
+        "url": "https://adambuilds.io/about"
+      }]
+  };
 
   // Get the next article, looping back to the first if at the end
   const nextArticle = newsData[(articleIndex + 1) % newsData.length];
@@ -31,6 +45,13 @@ const Article: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-4 px-6 pb-20">
+      <SEO 
+        title={article.title} 
+        description={article.excerpt}
+        image={article.imageUrl}
+        article={true}
+        schema={articleSchema}
+      />
       <div className="max-w-3xl mx-auto">
         <FadeIn direction="down">
           <Link to="/news" className="inline-flex items-center gap-2 text-brand-cta hover:text-brand-accent transition-colors mb-8">

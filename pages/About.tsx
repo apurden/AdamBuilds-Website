@@ -1,10 +1,30 @@
 import React from 'react';
 import FadeIn from '../components/FadeIn';
 import CallToAction from '../components/CallToAction';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Adam Vincent",
+    "url": "https://adambuilds.io/about",
+    "image": "https://github.com/apurden/AdamBuilds-Website/releases/download/v1.0-assets/adam.png",
+    "sameAs": [
+      "https://youtube.com/@AdamVincentBuilds",
+      "https://github.com/apurden"
+    ],
+    "jobTitle": "AI & Vibe Coder",
+    "description": "Building real software without writing a single line of code. Master of AI tools and workflow automation."
+  };
+
   return (
     <div className="min-h-screen px-6 pb-20">
+      <SEO 
+        title="About Adam Vincent" 
+        description="Learn about Adam Vincent's mission to master AI tools and build professional software through vibe coding. No code, just intent."
+        schema={personSchema}
+      />
       <div className="max-w-5xl mx-auto">
         {/* Profile Header */}
         <FadeIn className="flex flex-col md:flex-row items-center gap-12 mb-24 pt-4">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { glossaryData } from '../data/glossary';
 import FadeIn from '../components/FadeIn';
+import SEO from '../components/SEO';
 
 const Glossary: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -13,6 +14,10 @@ const Glossary: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-4 px-6 pb-20">
+      <SEO 
+        title="AI Glossary" 
+        description="A dictionary of modern AI terminology. From RAG to Vibe Coding, we decode the buzzwords of the agentic era."
+      />
       <div className="max-w-4xl mx-auto">
          <div className="text-center mb-12">
             <FadeIn direction="down">

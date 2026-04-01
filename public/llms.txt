@@ -1,0 +1,16 @@
+# AdamBuilds: AI & Vibe Coding
+
+Exploring the intersection of AI tools, workflow automation, and vibe coding. This site serves as a resource for developers and master-builders looking to leverage next-generation AI agents.
+
+## Key Sections
+
+- **Tools**: master list of high-utility AI tools and frameworks.
+- **News**: Latest updates on frontier models and agentic AI.
+- **Glossary**: Explanations of core concepts like RAG, Vibe Coding, and Agentic Workflows.
+- **About**: Profile and mission of Adam Vincent.
+
+## Metadata
+
+- **Author**: Adam Vincent
+- **Style**: Journalistic, technical, and forward-looking.
+- **Platform**: React SPA with static pre-rendering.
