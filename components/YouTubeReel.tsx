@@ -52,14 +52,19 @@ const YouTubeReel: React.FC = () => {
 
   useEffect(() => {
     let cancelled = false;
-    fetch('/api/youtube-latest')
-      .then((r) => {
-        if (!r.ok) return null;
+    const load = async () => {
+      try {
+        const r = await fetch('/api/youtube-latest');
+        if (!r.ok) return;
         const ct = r.headers.get('content-type') || '';
-        if (!ct.includes('application/json')) return null;
-        return r.json();
-      })
-      .then((data) => {
+        if (!ct.includes('application/json')) return;
+        const text = await r.text();
+        let data: any = null;
+        try {
+          data = JSON.parse(text);
+        } catch {
+          return;
+        }
         if (cancelled || !data?.videos?.length) return;
         const fetched: Video[] = data.videos.slice(0, 3).map((v: any) => ({
           id: v.id,
@@ -67,15 +72,19 @@ const YouTubeReel: React.FC = () => {
           thumbnail:
             v.thumbnail || `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`,
           thumbnailFallback:
-            v.thumbnailFallback || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
+            v.thumbnailFallback ||
+            `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
           url: v.url || `https://www.youtube.com/watch?v=${v.id}`,
         }));
         if (fetched.length) {
           setVideos(fetched);
           setActive(0);
         }
-      })
-      .catch(() => {});
+      } catch {
+        // swallow — fallback list stays in place
+      }
+    };
+    load();
     return () => {
       cancelled = true;
     };
