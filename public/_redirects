@@ -1,4 +1,7 @@
 /news/:slug  /news/2026/03/:slug  301
 
+# Netlify Functions: route /api/* to the matching function before SPA fallback
+/api/youtube-latest  /.netlify/functions/youtube-latest  200
+
 # SPA Rewrite: Redirect all other requests to index.html so React Router can handle them
 /*  /index.html  200
