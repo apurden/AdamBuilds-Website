@@ -5,6 +5,7 @@ import FadeIn from '../components/FadeIn';
 import CallToAction from '../components/CallToAction';
 import useMagnetic from '../hooks/useMagnetic';
 import SEO from '../components/SEO';
+import YouTubeReel from '../components/YouTubeReel';
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -41,17 +42,8 @@ const Home: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={200}>
-            <div className="w-full max-w-3xl mx-auto mb-16 rounded-3xl overflow-hidden glass-premium shadow-[0_0_100px_rgba(168,85,247,0.1)] border border-white/10 p-1 md:p-2">
-              <div className="aspect-video relative rounded-2xl overflow-hidden">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/Tyd24xC26ro?rel=0&modestbranding=1"
-                  title="AdamBuilds Intro Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
+            <div className="w-full max-w-3xl mx-auto mb-16">
+              <YouTubeReel />
             </div>
           </FadeIn>
 
