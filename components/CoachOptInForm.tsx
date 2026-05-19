@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
 import { MailCheck } from 'lucide-react';
-import useMagnetic from '../hooks/useMagnetic';
-
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
 
 // ── Kit (kit.com) form for the AI Money Coach lead magnet ──────────────────
 // Create a NEW form in Kit dedicated to this offer, set its incentive /
@@ -17,7 +10,6 @@ const KIT_COACH_FORM_ID = '9461468';
 
 const CoachOptInForm: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const buttonRef = useMagnetic<HTMLButtonElement>(0.2);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -72,33 +64,29 @@ const CoachOptInForm: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative z-20"
+      className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto relative z-20"
     >
       <input
         type="email"
         name="email_address"
         required
         placeholder="Enter your email"
-        className="flex-1 px-6 py-4 rounded-full bg-black/40 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent/50 transition-all shadow-inner backdrop-blur-sm"
+        className="flex-1 min-w-0 px-6 py-4 rounded-full bg-black/40 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent/50 transition-all shadow-inner backdrop-blur-sm"
       />
 
       <button
-        ref={buttonRef}
         type="submit"
         disabled={status === 'loading'}
-        className="btn-magnetic group relative px-8 py-4 bg-brand-cta text-brand-dark font-bold rounded-full overflow-hidden min-w-[180px]"
+        className="shrink-0 px-8 py-4 bg-brand-cta hover:bg-brand-cta-hover text-brand-dark font-bold rounded-full transition-colors whitespace-nowrap disabled:opacity-70"
       >
-        <span className="bg-layer bg-brand-cta-hover" />
-        <span className="relative z-10">
-          {status === 'loading' ? (
-            <span className="flex items-center justify-center gap-2">
-              <span className="w-4 h-4 border-2 border-brand-dark/30 border-t-brand-dark rounded-full animate-spin"></span>
-              Sending...
-            </span>
-          ) : (
-            'Send Me The Prompt'
-          )}
-        </span>
+        {status === 'loading' ? (
+          <span className="flex items-center justify-center gap-2">
+            <span className="w-4 h-4 border-2 border-brand-dark/30 border-t-brand-dark rounded-full animate-spin"></span>
+            Sending...
+          </span>
+        ) : (
+          'Send Me The Prompt'
+        )}
       </button>
 
       {status === 'error' && (
