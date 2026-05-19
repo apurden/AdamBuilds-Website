@@ -7,7 +7,6 @@ import {
   ShieldCheck,
   LineChart,
   MessagesSquare,
-  Lock,
   ArrowRight,
 } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
@@ -41,9 +40,9 @@ const features = [
     body: 'Ask "why was March high?" or "where are my leaks?" and get specific, numbers-backed answers.',
   },
   {
-    icon: Lock,
-    title: 'Your data stays local',
-    body: 'It runs as a live artifact in your browser. No accounts, no uploads, nothing leaves your machine.',
+    icon: ArrowRight,
+    title: 'Simple setup',
+    body: 'The confirmation email gives you the link, the prompt, and the steps to start building in Claude Cowork.',
   },
 ];
 
@@ -51,12 +50,12 @@ const steps = [
   {
     n: '01',
     title: 'Drop your email',
-    body: 'Enter your email below and confirm the subscription email Kit sends you.',
+    body: 'Enter your email below and confirm the email Kit sends you.',
   },
   {
     n: '02',
     title: 'Get the prompt',
-    body: 'The confirmation email links you straight to the full prompt + a one-click copy button.',
+    body: 'The confirmation email links you to the prompt page with a one-click copy button.',
   },
   {
     n: '03',
@@ -70,7 +69,7 @@ const Coach: React.FC = () => {
     <div className="min-h-screen pt-4 px-6 pb-24">
       <SEO
         title="Free AI Money Coach Prompt"
-        description="Get the exact prompt I used to turn Claude into a live AI money coach. Paste it into Claude Cowork, attach your bank CSV, and get a personal finance dashboard with a built-in AI coach. Free."
+        description="Get the link to the prompt I used to turn Claude into a live AI money coach. Paste it into Claude Cowork, attach your bank CSV, and get a personal finance dashboard with a built-in AI coach."
       />
 
       {/* Hero */}
@@ -97,9 +96,9 @@ const Coach: React.FC = () => {
           <FadeIn delay={250}>
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
               You saw the video. This is the exact prompt. Drop your email and
-              I'll send it straight to your inbox — paste it into Claude Cowork,
+              I'll send you the link to grab it — paste it into Claude Cowork,
               attach your bank export, and get a live finance dashboard with an
-              AI coach built in. No spreadsheet. No subscription. Free.
+              AI coach built in. No spreadsheet required.
             </p>
           </FadeIn>
 
@@ -108,8 +107,7 @@ const Coach: React.FC = () => {
               <CoachOptInForm />
             </div>
             <p className="text-xs text-slate-500">
-              One email with the prompt. Unsubscribe anytime. Your bank data
-              never leaves your browser.
+              One email with the link. Unsubscribe anytime.
             </p>
           </FadeIn>
         </div>
@@ -182,8 +180,8 @@ const Coach: React.FC = () => {
                 </span>
               </h2>
               <p className="text-slate-400 mb-10 max-w-lg mx-auto text-lg leading-relaxed">
-                Enter your email and the prompt is in your inbox in under a
-                minute.
+                Enter your email and the prompt link is in your inbox in under
+                a minute.
               </p>
               <div className="max-w-md mx-auto mb-6">
                 <CoachOptInForm />

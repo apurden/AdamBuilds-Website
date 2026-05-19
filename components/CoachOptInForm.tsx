@@ -48,8 +48,8 @@ const CoachOptInForm: React.FC = () => {
         </div>
         <h3 className="text-2xl font-bold text-brand-cta mb-2">Check your inbox</h3>
         <p className="text-slate-300">
-          Confirm your email and you'll get instant access to the exact AI Money
-          Coach prompt — copy, paste into Claude, done.
+          Confirm your email and you'll get the link to the AI Money Coach
+          prompt — copy, paste into Claude, done.
         </p>
         <button
           onClick={() => setStatus('idle')}
