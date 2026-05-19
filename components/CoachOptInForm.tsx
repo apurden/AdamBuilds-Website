@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { MailCheck } from 'lucide-react';
 
-// ── Kit (kit.com) form for the AI Money Coach lead magnet ──────────────────
-// Create a NEW form in Kit dedicated to this offer, set its incentive /
-// confirmation email to point at https://adambuilds.io/coach/prompt, then
-// paste that form's numeric ID here. It is the number in the form's embed
-// URL: app.kit.com/forms/<THIS_NUMBER>/subscriptions
-const KIT_COACH_FORM_ID = '9461468';
-
 const CoachOptInForm: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -18,18 +11,13 @@ const CoachOptInForm: React.FC = () => {
     const form = e.currentTarget;
     const email = (new FormData(form).get('email_address') as string) || '';
 
-    const params = new URLSearchParams();
-    params.append('email_address', email);
-    params.append('form_id', KIT_COACH_FORM_ID);
-    params.append('id', KIT_COACH_FORM_ID);
-
     try {
-      await fetch(`https://app.kit.com/forms/${KIT_COACH_FORM_ID}/subscriptions`, {
+      const response = await fetch('/api/coach-subscribe', {
         method: 'POST',
-        body: params,
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       });
+      if (!response.ok) throw new Error(`Subscribe failed: ${response.status}`);
       setStatus('success');
       form.reset();
     } catch (error) {
@@ -49,7 +37,7 @@ const CoachOptInForm: React.FC = () => {
         <h3 className="text-2xl font-bold text-brand-cta mb-2">Check your inbox</h3>
         <p className="text-slate-300">
           Confirm your email and you'll get the link to the AI Money Coach
-          prompt — copy, paste into Claude, done.
+          prompt. If it does not show up, check spam, promotions, and updates.
         </p>
         <button
           onClick={() => setStatus('idle')}
