@@ -39,6 +39,10 @@ const CoachOptInForm: React.FC = () => {
           Confirm your email and you'll get the link to the AI Money Coach
           prompt. If it does not show up, check spam, promotions, and updates.
         </p>
+        <p className="text-xs text-slate-500 mt-3">
+          Look for an email from adam@adambuilds.io with the subject
+          "Confirm to unlock your AI Money Coach prompt."
+        </p>
         <button
           onClick={() => setStatus('idle')}
           className="mt-4 text-sm text-slate-500 hover:text-white underline"
