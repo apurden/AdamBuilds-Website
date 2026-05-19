@@ -7,6 +7,8 @@ import News from './pages/News';
 import Glossary from './pages/Glossary';
 import About from './pages/About';
 import Article from './pages/Article';
+import Coach from './pages/Coach';
+import CoachPrompt from './pages/CoachPrompt';
 
 const App: React.FC = () => {
   return (
@@ -29,6 +31,8 @@ export const routes = [
       { path: "news/:year/:month/:slug", element: <Article /> },
       { path: "glossary", element: <Glossary /> },
       { path: "about", element: <About /> },
+      { path: "coach", element: <Coach /> },
+      { path: "coach/prompt", element: <CoachPrompt /> },
     ]
   },
 ];
