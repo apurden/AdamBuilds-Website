@@ -1,29 +1,21 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 import { MailCheck } from 'lucide-react';
 
+const KIT_COACH_FORM_ID = '9461468';
+const KIT_COACH_FORM_UID = '449abbcb4f';
+
 const CoachOptInForm: React.FC = () => {
+  const iframeName = `kit-coach-subscribe-target-${useId().replace(/:/g, '')}`;
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
     setStatus('loading');
 
     const form = e.currentTarget;
-    const email = (new FormData(form).get('email_address') as string) || '';
-
-    try {
-      const response = await fetch('/api/coach-subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      if (!response.ok) throw new Error(`Subscribe failed: ${response.status}`);
+    window.setTimeout(() => {
       setStatus('success');
       form.reset();
-    } catch (error) {
-      console.error('Coach opt-in error:', error);
-      setStatus('error');
-    }
+    }, 1200);
   };
 
   if (status === 'success') {
@@ -54,39 +46,53 @@ const CoachOptInForm: React.FC = () => {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto relative z-20"
-    >
-      <input
-        type="email"
-        name="email_address"
-        required
-        placeholder="Enter your email"
-        className="flex-1 min-w-0 px-6 py-4 rounded-full bg-black/40 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent/50 transition-all shadow-inner backdrop-blur-sm"
+    <>
+      <iframe
+        title="Kit coach subscription"
+        name={iframeName}
+        className="hidden"
       />
-
-      <button
-        type="submit"
-        disabled={status === 'loading'}
-        className="shrink-0 px-8 py-4 bg-brand-cta hover:bg-brand-cta-hover text-brand-dark font-bold rounded-full transition-colors whitespace-nowrap disabled:opacity-70"
+      <form
+        action={`https://app.kit.com/forms/${KIT_COACH_FORM_ID}/subscriptions`}
+        method="post"
+        target={iframeName}
+        data-sv-form={KIT_COACH_FORM_ID}
+        data-uid={KIT_COACH_FORM_UID}
+        data-format="inline"
+        data-version="5"
+        onSubmit={handleSubmit}
+        className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto relative z-20"
       >
-        {status === 'loading' ? (
-          <span className="flex items-center justify-center gap-2">
-            <span className="w-4 h-4 border-2 border-brand-dark/30 border-t-brand-dark rounded-full animate-spin"></span>
-            Sending...
-          </span>
-        ) : (
-          'Send Me The Prompt'
-        )}
-      </button>
+        <input
+          type="email"
+          name="email_address"
+          required
+          placeholder="Enter your email"
+          className="flex-1 min-w-0 px-6 py-4 rounded-full bg-black/40 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent/50 transition-all shadow-inner backdrop-blur-sm"
+        />
 
-      {status === 'error' && (
-        <div className="absolute -bottom-14 left-0 right-0 text-center bg-red-500/10 text-red-400 text-sm py-2 px-4 rounded-xl border border-red-500/20">
-          Something went wrong. Please try again.
-        </div>
-      )}
-    </form>
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className="shrink-0 px-8 py-4 bg-brand-cta hover:bg-brand-cta-hover text-brand-dark font-bold rounded-full transition-colors whitespace-nowrap disabled:opacity-70"
+        >
+          {status === 'loading' ? (
+            <span className="flex items-center justify-center gap-2">
+              <span className="w-4 h-4 border-2 border-brand-dark/30 border-t-brand-dark rounded-full animate-spin"></span>
+              Sending...
+            </span>
+          ) : (
+            'Send Me The Prompt'
+          )}
+        </button>
+
+        {status === 'error' && (
+          <div className="absolute -bottom-14 left-0 right-0 text-center bg-red-500/10 text-red-400 text-sm py-2 px-4 rounded-xl border border-red-500/20">
+            Something went wrong. Please try again.
+          </div>
+        )}
+      </form>
+    </>
   );
 };
 
