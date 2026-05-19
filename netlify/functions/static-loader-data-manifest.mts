@@ -9,5 +9,8 @@ export default async () => {
 };
 
 export const config = {
-  path: '/static-loader-data-manifest-:hash.json',
+  path: [
+    '/static-loader-data-manifest-:hash.json',
+    '/static-loader-data/*',
+  ],
 };
