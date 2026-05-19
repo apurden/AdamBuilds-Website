@@ -4,7 +4,7 @@
 /api/youtube-latest  /.netlify/functions/youtube-latest  200
 /static-loader-data-manifest-*  /.netlify/functions/static-loader-data-manifest  200
 /static-loader-data-manifest-:hash.json  /.netlify/functions/static-loader-data-manifest  200
-/static-loader-data/*  /.netlify/functions/static-loader-data-manifest  200
+/static-loader-data/*  /.netlify/functions/static-loader-data  200
 
 # SPA Rewrite: Redirect all other requests to index.html so React Router can handle them
 /*  /index.html  200
