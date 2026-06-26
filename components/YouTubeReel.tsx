@@ -54,7 +54,7 @@ const YouTubeReel: React.FC = () => {
     let cancelled = false;
     const load = async () => {
       try {
-        const r = await fetch('/api/youtube-latest');
+        const r = await fetch('/api/youtube-latest?format=longform');
         if (!r.ok) return;
         const ct = r.headers.get('content-type') || '';
         if (!ct.includes('application/json')) return;
@@ -66,16 +66,19 @@ const YouTubeReel: React.FC = () => {
           return;
         }
         if (cancelled || !data?.videos?.length) return;
-        const fetched: Video[] = data.videos.slice(0, 3).map((v: any) => ({
-          id: v.id,
-          title: v.title,
-          thumbnail:
-            v.thumbnail || `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`,
-          thumbnailFallback:
-            v.thumbnailFallback ||
-            `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
-          url: v.url || `https://www.youtube.com/watch?v=${v.id}`,
-        }));
+        const fetched: Video[] = data.videos
+          .filter((v: any) => !String(v.url || '').includes('/shorts/'))
+          .slice(0, 3)
+          .map((v: any) => ({
+            id: v.id,
+            title: v.title,
+            thumbnail:
+              v.thumbnail || `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`,
+            thumbnailFallback:
+              v.thumbnailFallback ||
+              `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
+            url: v.url || `https://www.youtube.com/watch?v=${v.id}`,
+          }));
         if (fetched.length) {
           setVideos(fetched);
           setActive(0);

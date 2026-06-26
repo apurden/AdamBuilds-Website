@@ -8,6 +8,7 @@ interface VideoEntry {
   thumbnailFallback: string;
   published: string;
   url: string;
+  isShort: boolean;
 }
 
 export default async () => {
@@ -19,7 +20,7 @@ export default async () => {
       return jsonResponse({ error: `feed_status_${res.status}` }, 502);
     }
     const xml = await res.text();
-    const videos = parseFeed(xml).slice(0, 3);
+    const videos = parseFeed(xml).filter((video) => !video.isShort).slice(0, 3);
     if (!videos.length) {
       return jsonResponse({ error: 'no_entries' }, 502);
     }
@@ -55,6 +56,7 @@ function parseFeed(xml: string): VideoEntry[] {
     const block = match[1];
     const id = block.match(/<yt:videoId>([^<]+)<\/yt:videoId>/)?.[1];
     const title = block.match(/<title>([^<]+)<\/title>/)?.[1];
+    const url = block.match(/<link rel="alternate" href="([^"]+)"/)?.[1];
     const published = block.match(/<published>([^<]+)<\/published>/)?.[1];
     if (!id || !title) continue;
     entries.push({
@@ -63,7 +65,8 @@ function parseFeed(xml: string): VideoEntry[] {
       thumbnail: `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`,
       thumbnailFallback: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
       published: published || '',
-      url: `https://www.youtube.com/watch?v=${id}`,
+      url: url || `https://www.youtube.com/watch?v=${id}`,
+      isShort: Boolean(url?.includes('/shorts/')),
     });
   }
   return entries;
