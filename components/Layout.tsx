@@ -30,6 +30,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     if (path === '/news') return { title: 'News | Latest in AI & Automation', description: 'Stay updated with the rapidly evolving world of AI.' };
     if (path === '/glossary') return { title: 'Glossary | AI Terminology Expert', description: 'Understand the language of AI and building.' };
     if (path === '/about') return { title: 'About | The Journey of AdamBuilds', description: 'Learning to build real software without writing a single line of code.' };
+    if (path === '/record-a-skill') return { title: '6 Free Claude Skill Builders | AdamBuilds', description: 'Turn repeatable work into reusable Claude skills with six copy-ready workflow builders.' };
+    if (path === '/record-a-skill/toolkit') return { title: 'Your Claude Skill Toolkit | AdamBuilds', description: 'Six copy-ready Claude skill builders with setup notes, guardrails, and test prompts.' };
     return { title: 'AdamBuilds', description: 'Build Real Software with AI.' };
   };
 
