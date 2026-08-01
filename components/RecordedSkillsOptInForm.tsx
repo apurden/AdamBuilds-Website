@@ -37,11 +37,23 @@ const RecordedSkillsOptInForm: React.FC = () => {
           </div>
         </div>
         <h3 className="text-2xl font-bold text-brand-cta mb-2">
-          Check your inbox
+          One more step: confirm your email
         </h3>
-        <p className="text-slate-300">
-          Confirm your email and I’ll send the private link to all six skill
-          builders. Check spam, promotions, or updates if it takes a minute.
+        <p className="text-slate-300 leading-relaxed">
+          Look for{' '}
+          <strong className="text-white">
+            “Confirm to unlock your 6 Claude Skill Builders”
+          </strong>{' '}
+          from <strong className="text-white">adam@adambuilds.io</strong>.
+        </p>
+        <p className="mt-3 text-sm text-slate-400 leading-relaxed">
+          Gmail may place it in Promotions, Updates,{' '}
+          <strong className="text-slate-300">Forums</strong>, or Spam. If you
+          don’t see it, search your mailbox for{' '}
+          <span className="font-mono text-brand-cta">
+            from:adam@adambuilds.io
+          </span>
+          .
         </p>
         <button
           type="button"
