@@ -17,10 +17,32 @@ const FadeIn: React.FC<FadeInProps> = ({
   fullWidth = false,
   viewportMargin = '-50px' // Default: trigger when element is 50px inside viewport
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  // Render visible by default so SSR, slow hydration, blocked JavaScript, or a
+  // missing IntersectionObserver can never turn the page into a blank screen.
+  // Elements below the fold are hidden after hydration and still animate when
+  // they enter the viewport.
+  const [isVisible, setIsVisible] = useState(true);
   const domRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentRef = domRef.current;
+
+    if (
+      !currentRef ||
+      typeof IntersectionObserver === 'undefined' ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return;
+    }
+
+    const bounds = currentRef.getBoundingClientRect();
+    const startsInViewport =
+      bounds.bottom >= 0 && bounds.top <= window.innerHeight;
+
+    if (!startsInViewport) {
+      setIsVisible(false);
+    }
+
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         // Once the element enters the viewport, trigger animation and stop observing
@@ -34,15 +56,10 @@ const FadeIn: React.FC<FadeInProps> = ({
       threshold: 0.1 // Trigger when 10% of the element is visible
     });
 
-    const currentRef = domRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    observer.observe(currentRef);
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
+      observer.unobserve(currentRef);
     };
   }, [viewportMargin]);
 
