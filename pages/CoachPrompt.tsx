@@ -140,7 +140,7 @@ const CoachPrompt: React.FC = () => {
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm transition-all ${
                   copied
                     ? 'bg-brand-accent/20 text-brand-accent'
-                    : 'bg-brand-cta text-brand-dark hover:bg-brand-cta-hover'
+                    : 'bg-brand-cta text-brand-dark hover:bg-brand-ctaHover'
                 }`}
               >
                 {copied ? (
@@ -163,7 +163,7 @@ const CoachPrompt: React.FC = () => {
                 className={`inline-flex items-center gap-2 px-8 py-3 rounded-full font-bold transition-all ${
                   copied
                     ? 'bg-brand-accent/20 text-brand-accent'
-                    : 'bg-brand-cta text-brand-dark hover:bg-brand-cta-hover'
+                    : 'bg-brand-cta text-brand-dark hover:bg-brand-ctaHover'
                 }`}
               >
                 {copied ? (

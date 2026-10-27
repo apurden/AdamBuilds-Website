@@ -82,7 +82,7 @@ const RecordASkill: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={300}>
-            <div id="get" className="max-w-xl mx-auto mb-4 scroll-mt-32">
+            <div id="get" className="max-w-2xl mx-auto mb-4 scroll-mt-32">
               <RecordedSkillsOptInForm />
             </div>
             <p className="text-xs text-slate-500">
@@ -238,7 +238,7 @@ const RecordASkill: React.FC = () => {
               Enter your email and I’ll send you the private link to all six
               copy-ready Claude skill builders.
             </p>
-            <div className="max-w-xl mx-auto mb-6">
+            <div className="max-w-2xl mx-auto mb-6">
               <RecordedSkillsOptInForm />
             </div>
             <p className="text-sm text-slate-500">

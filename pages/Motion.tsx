@@ -143,6 +143,18 @@ const Motion: React.FC = () => {
         </div>
       </section>
 
+      {/* Prompts mention */}
+      <section className="max-w-3xl mx-auto pb-8">
+        <FadeIn>
+          <p className="text-center text-slate-400 leading-relaxed">
+            The download page has{' '}
+            <strong className="text-white">12 prompts to try</strong>: title
+            behind you, 3D carousel, gallery wall, cartoon mascot, animated
+            chart and more. Copy one, paste it into Claude Code, and go.
+          </p>
+        </FadeIn>
+      </section>
+
       {/* How to use it */}
       <section className="max-w-5xl mx-auto py-16">
         <FadeIn>

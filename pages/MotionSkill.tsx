@@ -11,6 +11,57 @@ const FIRST_PROMPT =
 const INSTALL_BY_ASKING =
   'Unzip motion-graphics-skill.zip from my Downloads folder and put the motion-graphics folder inside .claude/skills in this project folder. Create .claude/skills if it does not exist.';
 
+const TRY_PROMPTS = [
+  {
+    name: 'Title behind you',
+    text: 'Put the title MADE BY CLAUDE behind me in my camera clip, sliding in from both sides.',
+  },
+  {
+    name: '3D carousel',
+    text: 'Show the four steps of my tutorial as a 3D card carousel.',
+  },
+  {
+    name: 'Gallery wall',
+    text: 'Make a tilted gallery wall of my videos, then zoom into one.',
+  },
+  {
+    name: 'Cartoon mascot',
+    text: 'Make a cartoon coffee cup mascot for my café that waves hello.',
+  },
+  {
+    name: 'Video intro',
+    text: 'Make me a title intro: the words slide in one at a time.',
+  },
+  {
+    name: 'Stat cards',
+    text: 'Make three stat cards with numbers that count up.',
+  },
+  {
+    name: 'Animated chart',
+    text: 'Draw a line chart of subscribers over 90 days.',
+  },
+  {
+    name: 'How it works',
+    text: 'Show four steps connected by traveling dots.',
+  },
+  {
+    name: 'Task list',
+    text: "Show Claude's plan as a task list that ticks off.",
+  },
+  {
+    name: 'Quote card',
+    text: 'Make a quote card with my name underneath.',
+  },
+  {
+    name: 'Website header',
+    text: 'Draw an animated sunset landscape for my website header.',
+  },
+  {
+    name: 'App widget',
+    text: 'Make an animated weather widget with rain for my app.',
+  },
+];
+
 const copyText = async (text: string) => {
   try {
     await navigator.clipboard.writeText(text);
@@ -65,6 +116,54 @@ const CopyBox: React.FC<{ label: string; text: string }> = ({ label, text }) => 
         {text}
       </p>
     </div>
+  );
+};
+
+const PromptRow: React.FC<{ n: number; name: string; text: string }> = ({
+  n,
+  name,
+  text,
+}) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await copyText(text);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2500);
+  };
+
+  return (
+    <li className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5 py-4">
+      <div className="min-w-0 flex-1">
+        <h3 className="text-white font-bold mb-1">
+          <span className="text-slate-500 mr-2">{String(n).padStart(2, '0')}</span>
+          {name}
+        </h3>
+        <p className="text-sm text-slate-300 leading-relaxed break-words">
+          {text}
+        </p>
+      </div>
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={`Copy the ${name} prompt`}
+        className={`inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full font-bold text-sm transition-all shrink-0 self-start sm:self-center ${
+          copied
+            ? 'bg-brand-accent/20 text-brand-accent'
+            : 'bg-brand-cta text-brand-dark hover:bg-brand-ctaHover'
+        }`}
+      >
+        {copied ? (
+          <>
+            <Check size={15} /> Copied
+          </>
+        ) : (
+          <>
+            <Copy size={15} /> Copy
+          </>
+        )}
+      </button>
+    </li>
   );
 };
 
@@ -176,6 +275,33 @@ const MotionSkill: React.FC = () => {
                 </p>
               </div>
             </div>
+          </FadeIn>
+        </div>
+
+        <div className="mt-16">
+          <FadeIn>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-3">
+              12 prompts to <span className="text-gradient">try</span>
+            </h2>
+            <p className="text-slate-400 text-center max-w-xl mx-auto mb-8 leading-relaxed">
+              The examples from the video. Copy one, paste it into Claude Code
+              in your project folder, and watch it build.
+            </p>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <div className="glass-premium rounded-2xl px-6 py-2">
+              <ol className="divide-y divide-white/10">
+                {TRY_PROMPTS.map((p, i) => (
+                  <PromptRow key={p.name} n={i + 1} name={p.name} text={p.text} />
+                ))}
+              </ol>
+            </div>
+            <p className="text-center text-sm text-slate-400 mt-5 max-w-xl mx-auto leading-relaxed">
+              These are starting prompts. The first few took some back-and-forth
+              in the video, so your first try may need a small fix: just tell
+              Claude what to change. Prompt 1 needs your own camera clip and a
+              Mac.
+            </p>
           </FadeIn>
         </div>
 
