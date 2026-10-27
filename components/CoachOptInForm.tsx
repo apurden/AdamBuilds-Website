@@ -61,7 +61,7 @@ const CoachOptInForm: React.FC = () => {
         data-format="inline"
         data-version="5"
         onSubmit={handleSubmit}
-        className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto relative z-20"
+        className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto relative z-20"
       >
         <input
           type="email"

@@ -1,0 +1,134 @@
+import React, { useId, useState } from 'react';
+import { MailCheck } from 'lucide-react';
+
+// Kit (kit.com) form for the free motion graphics skill. Same flow as the
+// coach and recorded-skills forms: the visitor submits here, Kit emails a
+// confirmation, and that email links to /motion/skill (the download page).
+// Create a new Kit form for this offer, then paste its numeric form ID and
+// its data-uid here (both are in the form's embed code). Until both are set
+// the button stays disabled, so nobody can sign up into a form that isn't
+// there.
+const KIT_MOTION_FORM_ID = '';
+const KIT_MOTION_FORM_UID = '';
+
+const MotionOptInForm: React.FC = () => {
+  const iframeName = `kit-motion-target-${useId().replace(/:/g, '')}`;
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const isConfigured = Boolean(KIT_MOTION_FORM_ID && KIT_MOTION_FORM_UID);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    if (!isConfigured) {
+      event.preventDefault();
+      return;
+    }
+
+    const form = event.currentTarget;
+    setStatus('loading');
+    window.setTimeout(() => {
+      setStatus('success');
+      form.reset();
+    }, 1200);
+  };
+
+  if (status === 'success') {
+    return (
+      <div
+        className="p-8 bg-brand-accent/10 border border-brand-accent/20 rounded-3xl animate-fade-in max-w-md mx-auto text-center"
+        role="status"
+      >
+        <div className="flex justify-center mb-4">
+          <div className="p-4 rounded-2xl bg-brand-cta/15 text-brand-cta">
+            <MailCheck size={32} />
+          </div>
+        </div>
+        <h3 className="text-2xl font-bold text-brand-cta mb-2">
+          One more step: confirm your email
+        </h3>
+        <p className="text-slate-300 leading-relaxed">
+          Look for{' '}
+          <strong className="text-white">
+            “Confirm to unlock your motion graphics skill”
+          </strong>{' '}
+          from <strong className="text-white">adam@adambuilds.io</strong>.
+          Click the button inside and you'll get the download.
+        </p>
+        <p className="mt-3 text-sm text-slate-400 leading-relaxed">
+          Gmail may place it in Promotions, Updates,{' '}
+          <strong className="text-slate-300">Forums</strong>, or Spam. If you
+          don’t see it, search your mailbox for{' '}
+          <span className="font-mono text-brand-cta">
+            from:adam@adambuilds.io
+          </span>
+          .
+        </p>
+        <button
+          type="button"
+          onClick={() => setStatus('idle')}
+          className="mt-4 text-sm text-slate-500 hover:text-white underline"
+        >
+          Use another email
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <iframe
+        title="Kit motion skill subscription"
+        name={iframeName}
+        className="hidden"
+      />
+      <form
+        action={
+          isConfigured
+            ? `https://app.kit.com/forms/${KIT_MOTION_FORM_ID}/subscriptions`
+            : undefined
+        }
+        method="post"
+        target={iframeName}
+        data-sv-form={KIT_MOTION_FORM_ID || undefined}
+        data-uid={KIT_MOTION_FORM_UID || undefined}
+        data-format="inline"
+        data-version="5"
+        onSubmit={handleSubmit}
+        className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto relative z-20"
+      >
+        <label htmlFor={`${iframeName}-email`} className="sr-only">
+          Email address
+        </label>
+        <input
+          id={`${iframeName}-email`}
+          type="email"
+          name="email_address"
+          required
+          placeholder="Enter your email"
+          className="flex-1 min-w-0 px-6 py-4 rounded-full bg-black/40 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent/50 transition-all shadow-inner backdrop-blur-sm"
+        />
+
+        <button
+          type="submit"
+          disabled={status === 'loading' || !isConfigured}
+          title={!isConfigured ? 'Email delivery is being connected' : undefined}
+          className="shrink-0 px-8 py-4 bg-brand-cta hover:bg-brand-ctaHover text-brand-dark font-bold rounded-full transition-colors whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {status === 'loading' ? (
+            <span className="flex items-center justify-center gap-2">
+              <span className="w-4 h-4 border-2 border-brand-dark/30 border-t-brand-dark rounded-full animate-spin" />
+              Sending...
+            </span>
+          ) : (
+            'Send Me The Skill'
+          )}
+        </button>
+      </form>
+      {!isConfigured && (
+        <p className="mt-3 text-xs text-amber-300/80 text-center" role="status">
+          Email delivery is being connected. Please check back shortly.
+        </p>
+      )}
+    </>
+  );
+};
+
+export default MotionOptInForm;
