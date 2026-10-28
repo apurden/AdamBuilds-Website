@@ -61,7 +61,7 @@ const CoachOptInForm: React.FC = () => {
         data-format="inline"
         data-version="5"
         onSubmit={handleSubmit}
-        className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto relative z-20"
+        className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto relative z-20"
       >
         <input
           type="email"
@@ -74,7 +74,7 @@ const CoachOptInForm: React.FC = () => {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="shrink-0 px-8 py-4 bg-brand-cta hover:bg-brand-cta-hover text-brand-dark font-bold rounded-full transition-colors whitespace-nowrap disabled:opacity-70"
+          className="shrink-0 px-8 py-4 bg-brand-cta hover:bg-brand-ctaHover text-brand-dark font-bold rounded-full transition-colors whitespace-nowrap disabled:opacity-70"
         >
           {status === 'loading' ? (
             <span className="flex items-center justify-center gap-2">

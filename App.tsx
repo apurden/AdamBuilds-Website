@@ -9,6 +9,8 @@ import About from './pages/About';
 import Article from './pages/Article';
 import Coach from './pages/Coach';
 import CoachPrompt from './pages/CoachPrompt';
+import Motion from './pages/Motion';
+import MotionSkill from './pages/MotionSkill';
 import RecordASkill from './pages/RecordASkill';
 import RecordedSkillsToolkit from './pages/RecordedSkillsToolkit';
 
@@ -35,6 +37,8 @@ export const routes = [
       { path: "about", element: <About /> },
       { path: "coach", element: <Coach /> },
       { path: "coach/prompt", element: <CoachPrompt /> },
+      { path: "motion", element: <Motion /> },
+      { path: "motion/skill", element: <MotionSkill /> },
       { path: "record-a-skill", element: <RecordASkill /> },
       { path: "record-a-skill/toolkit", element: <RecordedSkillsToolkit /> },
     ]

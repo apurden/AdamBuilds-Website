@@ -103,7 +103,7 @@ const Coach: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={350}>
-            <div id="get" className="max-w-md mx-auto mb-4">
+            <div id="get" className="max-w-2xl mx-auto mb-4">
               <CoachOptInForm />
             </div>
             <p className="text-xs text-slate-500">
@@ -183,7 +183,7 @@ const Coach: React.FC = () => {
                 Enter your email and the prompt link is in your inbox in under
                 a minute.
               </p>
-              <div className="max-w-md mx-auto mb-6">
+              <div className="max-w-2xl mx-auto mb-6">
                 <CoachOptInForm />
               </div>
               <p className="text-sm text-slate-500">

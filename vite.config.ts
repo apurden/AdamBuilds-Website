@@ -19,7 +19,7 @@ export default defineConfig({
   },
   publicDir: 'public',
   ssgOptions: {
-    script: 'async',
+    script: 'defer',
     formatting: 'none',
     includedRoutes(paths) {
       // Find all news articles via filesystem to avoid import.meta.glob issues
