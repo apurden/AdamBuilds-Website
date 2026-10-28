@@ -4,12 +4,11 @@ import { MailCheck } from 'lucide-react';
 // Kit (kit.com) form for the free motion graphics skill. Same flow as the
 // coach and recorded-skills forms: the visitor submits here, Kit emails a
 // confirmation, and that email links to /motion/skill (the download page).
-// Create a new Kit form for this offer, then paste its numeric form ID and
-// its data-uid here (both are in the form's embed code). Until both are set
-// the button stays disabled, so nobody can sign up into a form that isn't
-// there.
-const KIT_MOTION_FORM_ID = '';
-const KIT_MOTION_FORM_UID = '';
+// Kit form "Motion Graphics Skill" (a copy of the AI Money Coach form, Oct 27):
+// confirmation subject "Confirm to unlock your motion graphics skill", and
+// confirmed subscribers are redirected to /motion/skill.
+const KIT_MOTION_FORM_ID = '10107736';
+const KIT_MOTION_FORM_UID = '4c8e94bff7';
 
 const MotionOptInForm: React.FC = () => {
   const iframeName = `kit-motion-target-${useId().replace(/:/g, '')}`;
