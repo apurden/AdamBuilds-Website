@@ -13,6 +13,8 @@ import Motion from './pages/Motion';
 import MotionSkill from './pages/MotionSkill';
 import RecordASkill from './pages/RecordASkill';
 import RecordedSkillsToolkit from './pages/RecordedSkillsToolkit';
+import UsageBar from './pages/UsageBar';
+import UsageBarPlugin from './pages/UsageBarPlugin';
 
 const App: React.FC = () => {
   return (
@@ -41,6 +43,8 @@ export const routes = [
       { path: "motion/skill", element: <MotionSkill /> },
       { path: "record-a-skill", element: <RecordASkill /> },
       { path: "record-a-skill/toolkit", element: <RecordedSkillsToolkit /> },
+      { path: "usage-bar", element: <UsageBar /> },
+      { path: "usage-bar/plugin", element: <UsageBarPlugin /> },
     ]
   },
 ];
