@@ -15,6 +15,8 @@ import RecordASkill from './pages/RecordASkill';
 import RecordedSkillsToolkit from './pages/RecordedSkillsToolkit';
 import UsageBar from './pages/UsageBar';
 import UsageBarPlugin from './pages/UsageBarPlugin';
+import VideoSkill from './pages/VideoSkill';
+import VideoSkillDownload from './pages/VideoSkillDownload';
 
 const App: React.FC = () => {
   return (
@@ -45,6 +47,8 @@ export const routes = [
       { path: "record-a-skill/toolkit", element: <RecordedSkillsToolkit /> },
       { path: "usage-bar", element: <UsageBar /> },
       { path: "usage-bar/plugin", element: <UsageBarPlugin /> },
+      { path: "video", element: <VideoSkill /> },
+      { path: "video/skill", element: <VideoSkillDownload /> },
     ]
   },
 ];
