@@ -5,9 +5,6 @@ import FadeIn from '../components/FadeIn';
 import SEO from '../components/SEO';
 import WorkshopOptInForm from '../components/WorkshopOptInForm';
 
-// Platform line: flip to Mac and Windows once a Windows install has been tested.
-const PLATFORM_NOTE = 'Made and tested on a Mac. Windows support is included and being tested now.';
-
 const features = [
   {
     icon: Hammer,
@@ -61,7 +58,6 @@ const steps = [
 
 const needs = [
   'The Claude desktop app, using the Code tab. The workshop follows Claude Code chats, not chats in the browser.',
-  PLATFORM_NOTE,
   'Node 18 or newer, the free tool the workshop runs on. If you don\'t have it, Claude offers to install it for you.',
   'A few minutes for the first install while Claude sets everything up. No coding.',
 ];
