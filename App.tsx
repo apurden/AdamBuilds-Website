@@ -17,6 +17,8 @@ import UsageBar from './pages/UsageBar';
 import UsageBarPlugin from './pages/UsageBarPlugin';
 import VideoSkill from './pages/VideoSkill';
 import VideoSkillDownload from './pages/VideoSkillDownload';
+import Workshop from './pages/Workshop';
+import WorkshopDownload from './pages/WorkshopDownload';
 
 const App: React.FC = () => {
   return (
@@ -49,6 +51,8 @@ export const routes = [
       { path: "usage-bar/plugin", element: <UsageBarPlugin /> },
       { path: "video", element: <VideoSkill /> },
       { path: "video/skill", element: <VideoSkillDownload /> },
+      { path: "workshop", element: <Workshop /> },
+      { path: "workshop/pack", element: <WorkshopDownload /> },
     ]
   },
 ];
