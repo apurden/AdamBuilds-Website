@@ -1,7 +1,7 @@
 import React, { useId, useState } from 'react';
 import { MailCheck } from 'lucide-react';
 
-// Kit (kit.com) form for the free Claude Workshop pack (workshop + usage bar + badges).
+// Kit (kit.com) form for the free Claude Workshop pack (workshop + usage bar).
 // Same flow as the video skill form: the visitor submits here, Kit emails a
 // confirmation, and that email links to /workshop/pack (the download page).
 // Connected Nov 14: Kit form "Claude Workshop Pack" (copy of the video skill form): confirmation subject
