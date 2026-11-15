@@ -4,16 +4,16 @@ import FadeIn from '../components/FadeIn';
 import SEO from '../components/SEO';
 
 const ZIP_URL = '/downloads/claude-workshop-pack.zip';
-// Fill in the real size once the pack is built.
-const ZIP_SIZE = '48 KB';
+// Real size of public/downloads/claude-workshop-pack.zip (Nov 15 build, no badges).
+const ZIP_SIZE = '40 KB';
 
 const INSTALL_PROMPT =
-  'Install the Claude Workshop pack from the claude-workshop folder in my Downloads: the workshop, the usage bar and the badges.';
+  'Install the Claude Workshop pack from the claude-workshop folder in my Downloads: the workshop and the usage bar.';
 
 const FIRST_PROMPT =
   'Make a time-lapse of this chat with the workshop.';
 
-const UNINSTALL_PROMPT = 'Remove the Claude Workshop pack: the workshop, the usage bar and the badges.';
+const UNINSTALL_PROMPT = 'Remove the Claude Workshop pack: the workshop and the usage bar.';
 
 const copyText = async (text: string) => {
   try {
@@ -149,7 +149,7 @@ const WorkshopDownload: React.FC = () => {
               Start or continue a chat in the Code tab. The workshop appears along
               the bottom of your screen and the worker starts moving with Claude.
               It fades away after five quiet minutes and comes back on your next
-              prompt. The usage bar and badges sit right above your chat box.
+              prompt. The usage bar sits right above your chat box.
             </p>
           </Step>
 

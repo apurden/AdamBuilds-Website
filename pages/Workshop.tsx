@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Hammer, Users, Gauge, Award, Film, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
+import { Hammer, Users, Gauge, Film, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
 import SEO from '../components/SEO';
 import WorkshopOptInForm from '../components/WorkshopOptInForm';
@@ -20,11 +20,6 @@ const features = [
     icon: Gauge,
     title: 'The usage bar',
     body: 'How full your chat is, your 5-hour limit and your week, right above the chat box. Green, yellow, orange, red, so you know when to start fresh.',
-  },
-  {
-    icon: Award,
-    title: '31 badges',
-    body: 'Earned from what Claude actually does for you. The first ones unlock from your past chats the moment you install it.',
   },
   {
     icon: Film,
@@ -52,7 +47,7 @@ const steps = [
   {
     n: '03',
     title: 'Use Claude like normal',
-    body: 'The workshop appears along the bottom of your screen and follows your Claude Code chats. The usage bar and badges sit above your chat box.',
+    body: 'The workshop appears along the bottom of your screen and follows your Claude Code chats. The usage bar sits above your chat box.',
   },
 ];
 
@@ -67,7 +62,7 @@ const Workshop: React.FC = () => {
     <div className="min-h-screen pt-4 px-6 pb-24">
       <SEO
         title="Free Claude Workshop Pack"
-        description="Get the free Claude Workshop pack from my video: a tiny 3D workshop that shows what Claude is doing, plus the usage bar and badges. Claude installs it for you."
+        description="Get the free Claude Workshop pack from my video: a tiny 3D workshop that shows what Claude is doing, plus the usage bar. Claude installs it for you."
       />
 
       {/* Hero */}
@@ -95,7 +90,7 @@ const Workshop: React.FC = () => {
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
               You saw the video. Drop your email and I'll send you the Workshop
               pack: the little workshop that acts out what Claude is doing, plus
-              the usage bar and badges. Claude installs it for you from one sentence.
+              the usage bar. Claude installs it for you from one sentence.
             </p>
           </FadeIn>
 
@@ -123,7 +118,7 @@ const Workshop: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {features.map((f, i) => (
-            <FadeIn key={f.title} delay={i * 80}>
+            <FadeIn key={f.title} delay={i * 80} className={features.length % 2 && i === features.length - 1 ? 'md:col-span-2' : ''}>
               <div className="glass-card h-full p-8 hover:bg-white/[0.05] transition-all group hover:-translate-y-2 duration-500">
                 <div className="p-4 w-fit bg-brand-accent/10 rounded-2xl text-brand-accent group-hover:scale-110 transition-transform mb-6">
                   <f.icon size={28} />
