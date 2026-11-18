@@ -1,9 +1,4 @@
-[[headers]]
-  for = "/*.tsx"
-  [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
-
-[[headers]]
-  for = "/*.ts"
-  [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
+# The site is built by Vite into dist/, so no .ts or .tsx files are ever served.
+# The old [[headers]] rules for "/*.ts" and "/*.tsx" were removed on Nov 18, 2026:
+# Netlify matched any address ending in "ts" (like /audit/prompts) and sent the
+# page as JavaScript, so browsers showed raw code instead of the page.
