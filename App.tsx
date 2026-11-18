@@ -6,6 +6,8 @@ import Tools from './pages/Tools';
 import News from './pages/News';
 import Glossary from './pages/Glossary';
 import About from './pages/About';
+import Audit from './pages/Audit';
+import AuditPrompts from './pages/AuditPrompts';
 import Article from './pages/Article';
 import Coach from './pages/Coach';
 import CoachPrompt from './pages/CoachPrompt';
@@ -41,6 +43,8 @@ export const routes = [
       { path: "news/:year/:month/:slug", element: <Article /> },
       { path: "glossary", element: <Glossary /> },
       { path: "about", element: <About /> },
+      { path: "audit", element: <Audit /> },
+      { path: "audit/prompts", element: <AuditPrompts /> },
       { path: "coach", element: <Coach /> },
       { path: "coach/prompt", element: <CoachPrompt /> },
       { path: "motion", element: <Motion /> },
